@@ -66,7 +66,7 @@ export default function App() {
       </main>
 
       <footer className="bg-gray-100 p-4 text-center text-xs text-gray-500 border-t">
-        <p>© 2024 MathGen Project. Designed for Korean Middle School Curriculum.</p>
+        <p>© 2025 MathGen Project Designed for Yoon and Alice.</p>
       </footer>
     </div>
   );

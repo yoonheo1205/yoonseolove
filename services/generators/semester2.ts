@@ -205,66 +205,90 @@ const simHigh = (): Problem => {
 
 const pythLow = (): Problem => {
   const diff = 'Low';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
   const [a, b, c] = randomItem([[3,4,5], [6,8,10], [5,12,13]]);
-  if (type===1) return createProblem('2-2-3', diff, `직각을 낀 두 변의 길이가 ${a}, ${b}인 직각삼각형의 빗변의 길이는?`, `${c}`);
-  if (type===2) return createProblem('2-2-3', diff, `빗변의 길이가 ${c}이고 다른 한 변이 ${a}인 직각삼각형의 나머지 변의 길이는?`, `${b}`);
-  if (type===3) return createProblem('2-2-3', diff, `가로가 ${a}, 세로가 ${b}인 직사각형의 대각선의 길이는?`, `${c}`);
-  if (type===4) return createProblem('2-2-3', diff, `세 변의 길이가 3, 4, 5인 삼각형은 직각삼각형인가? (O/X)`, `O`);
+  if (type===1) return createProblem('2-2-3', diff, `직각을 낀 두 변의 길이가 ${a}, ${b}인 직각삼각형의 빗변의 길이를 구하시오.`, `${c}`);
+  if (type===2) return createProblem('2-2-3', diff, `빗변의 길이가 ${c}이고 다른 한 변이 ${a}인 직각삼각형의 나머지 변의 길이를 구하시오.`, `${b}`);
+  if (type===3) return createProblem('2-2-3', diff, `가로가 ${a}, 세로가 ${b}인 직사각형의 대각선의 길이를 구하시오.`, `${c}`);
+  if (type===4) return createProblem('2-2-3', diff, `세 변의 길이가 3, 4, 5인 삼각형은 직각삼각형인지 O, X로 답하시오.`, `O`);
   if (type===5) return createProblem('2-2-3', diff, `직각삼각형에서 빗변의 길이의 제곱은 나머지 두 변의 길이의 무엇과 같은가?`, `제곱의 합`);
-  if (type===6) return createProblem('2-2-3', diff, `좌표평면 위의 원점과 점 $(3, 4)$ 사이의 거리는?`, `5`);
-  if (type===7) return createProblem('2-2-3', diff, `한 변의 길이가 1인 정사각형의 대각선의 길이는?`, `$\\sqrt{2}$`);
-  if (type===8) return createProblem('2-2-3', diff, `삼각형의 가장 긴 변의 제곱이 나머지 두 변의 제곱의 합보다 크면 어떤 삼각형인가?`, `둔각삼각형`);
-  if (type===9) return createProblem('2-2-3', diff, `피타고라스 정리가 성립하는 삼각형은 어떤 삼각형인가?`, `직각삼각형`);
-  if (type===10) return createProblem('2-2-3', diff, `세 변의 길이가 4, 5, 6인 삼각형은 예각, 직각, 둔각 중 무엇인가?`, `예각삼각형`);
-  if (type===11) return createProblem('2-2-3', diff, `직각이등변삼각형의 세 변의 길이의 비는?`, `$1:1:\\sqrt{2}$`);
-  if (type===12) return createProblem('2-2-3', diff, `세 변의 길이가 5, 12, 13일 때 직각과 마주보는 변(빗변)의 길이는?`, `13`);
-  if (type===13) return createProblem('2-2-3', diff, `대각선의 길이가 10인 직사각형의 가로가 8일 때 세로의 길이는?`, `6`);
-  if (type===14) return createProblem('2-2-3', diff, `원점 $(0,0)$과 점 $(a,b)$ 사이의 거리 공식은?`, `$\\sqrt{a^2+b^2}$`);
-  return createProblem('2-2-3', diff, `피타고라스 정리는 어느 시대 수학자의 이름에서 유래했는가?`, `고대 그리스`);
+  if (type===6) return createProblem('2-2-3', diff, `좌표평면 위의 원점과 점 $(3, 4)$ 사이의 거리를 구하시오.`, `5`);
+  if (type===7) return createProblem('2-2-3', diff, `한 변의 길이가 1인 정사각형의 대각선의 길이를 구하시오.`, `$\\sqrt{2}$`);
+  if (type===8) return createProblem('2-2-3', diff, `삼각형의 가장 긴 변의 제곱이 나머지 두 변의 제곱의 합보다 크면 어떤 삼각형인지 쓰시오.`, `둔각삼각형`);
+  if (type===9) return createProblem('2-2-3', diff, `피타고라스 정리가 성립하는 삼각형은 어떤 삼각형인지 쓰시오.`, `직각삼각형`);
+  if (type===10) return createProblem('2-2-3', diff, `세 변의 길이가 4, 5, 6인 삼각형은 예각삼각형, 직각삼각형, 둔각삼각형 중 어느 것인지 쓰시오.`, `예각삼각형`);
+  if (type===11) return createProblem('2-2-3', diff, `직각이등변삼각형의 세 변의 길이의 비를 쓰시오.`, `$1:1:\\sqrt{2}$`);
+  if (type===12) return createProblem('2-2-3', diff, `세 변의 길이가 5, 12, 13일 때, 직각과 마주보는 변(빗변)의 길이를 구하시오.`, `13`);
+  if (type===13) return createProblem('2-2-3', diff, `대각선의 길이가 10인 직사각형의 가로가 8일 때, 세로의 길이를 구하시오.`, `6`);
+  if (type===14) return createProblem('2-2-3', diff, `원점 $(0,0)$과 점 $(a,b)$ 사이의 거리 공식을 쓰시오.`, `$\\sqrt{a^2+b^2}$`);
+  if (type===15) return createProblem('2-2-3', diff, `피타고라스 정리는 어느 시대 어느 나라 수학자의 이름에서 유래했는가?`, `고대 그리스`);
+  if (type===16) return createProblem('2-2-3', diff, `직각삼각형에서 두 변의 길이가 각각 9와 12일 때, 빗변의 길이를 구하시오.`, `15`);
+  if (type===17) return createProblem('2-2-3', diff, `좌표평면 위의 점 $(0,0)$과 $(5,12)$ 사이의 거리를 구하시오.`, `13`);
+  if (type===18) return createProblem('2-2-3', diff, `한 변의 길이가 2인 정사각형의 대각선 길이를 $\\sqrt{}$ 기호를 사용하여 나타내시오.`, `$2\\sqrt{2}$`);
+  if (type===19) return createProblem('2-2-3', diff, `밑변이 6, 높이가 8인 직각삼각형의 빗변의 길이를 구하시오.`, `10`);
+  if (type===20) return createProblem('2-2-3', diff, `직각삼각형에서 빗변의 길이가 13이고 한 직각변의 길이가 5일 때, 다른 직각변의 길이를 구하시오.`, `12`);
+  if (type===21) return createProblem('2-2-3', diff, `세 변의 길이가 7, 24, 25인 삼각형이 직각삼각형인지 피타고라스 정리를 이용해 판단하시오.`, `직각삼각형이다.`);
+  if (type===22) return createProblem('2-2-3', diff, `직각삼각형의 두 직각변 길이가 각각 $a, b$일 때, 빗변의 길이를 나타내는 공식을 쓰시오.`, `$\\sqrt{a^2+b^2}$`);
+  return createProblem('2-2-3', diff, `피타고라스 정리를 이용하여 삼각형이 직각삼각형인지 판별하는 방법을 간단히 설명하시오.`, `가장 긴 변의 제곱과 나머지 두 변의 제곱의 합을 비교한다.`);
 };
 
 const pythMid = (): Problem => {
   const diff = 'Mid';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
   
-  if (type===1) { const s = 4; return createProblem('2-2-3', diff, `한 변의 길이가 ${s}인 정삼각형의 높이는?`, `$2\\sqrt{3}$`); }
-  if (type===2) { return createProblem('2-2-3', diff, `세 변의 길이가 5, 5, 6인 이등변삼각형의 넓이는?`, `12`); }
-  if (type===3) return createProblem('2-2-3', diff, `두 점 $(1,1)$과 $(4,5)$ 사이의 거리는?`, `5`);
-  if (type===4) return createProblem('2-2-3', diff, `대각선의 길이가 $4\\sqrt{2}$인 정사각형의 한 변의 길이는?`, `4`);
-  if (type===5) { return createProblem('2-2-3', diff, `가로 3, 세로 4, 높이 12인 직육면체의 대각선의 길이는?`, `13`); }
-  if (type===6) { return createProblem('2-2-3', diff, `밑면의 반지름이 3이고 높이가 4인 원뿔의 모선 길이는?`, `5`); }
-  if (type===7) return createProblem('2-2-3', diff, `가로 4, 세로 8인 직사각형을 대각선으로 접었다. 겹쳐진 삼각형은 이등변삼각형이다. 이 삼각형의 밑변의 길이는 대각선 길이와 같은가? (O/X)`, `X`);
-  if (type===8) return createProblem('2-2-3', diff, `정삼각형의 한 변의 길이가 $a$일 때 넓이를 구하는 공식은?`, `$\\frac{\\sqrt{3}}{4}a^2$`);
-  if (type===9) return createProblem('2-2-3', diff, `길이 10m인 사다리가 벽에 기대어 있다. 사다리 밑이 벽에서 6m 떨어져 있다면, 사다리가 닿은 높이는?`, `8m`);
-  if (type===10) return createProblem('2-2-3', diff, `대각선이 서로 수직인 사각형에서 두 대변의 제곱의 합은 서로 같다. (O/X)`, `O`);
-  if (type===11) return createProblem('2-2-3', diff, `한 모서리의 길이가 6인 정육면체의 대각선의 길이는?`, `$6\\sqrt{3}$`);
-  if (type===12) return createProblem('2-2-3', diff, `세 변의 길이가 $x, x+1, x+2$인 직각삼각형에서 $x$의 값은?`, `3`);
-  if (type===13) return createProblem('2-2-3', diff, `폭이 10인 직사각형 종이를 접어서 겹친 부분이 정삼각형이 되게 할 때, 한 변의 길이는?`, `$\\frac{20\\sqrt{3}}{3}$`);
-  if (type===14) return createProblem('2-2-3', diff, `가로 6, 대각선 10인 직사각형의 넓이는?`, `48`);
-  return createProblem('2-2-3', diff, `직육면체의 겉면을 따라가는 최단 거리를 구할 때 무엇을 이용하는가?`, `전개도`);
+  if (type===1) { const s = 4; return createProblem('2-2-3', diff, `한 변의 길이가 ${s}인 정삼각형의 높이를 구하시오.`, `$2\\sqrt{3}$`); }
+  if (type===2) { return createProblem('2-2-3', diff, `세 변의 길이가 5, 5, 6인 이등변삼각형의 넓이를 구하시오.`, `12`); }
+  if (type===3) return createProblem('2-2-3', diff, `두 점 $(1,1)$과 $(4,5)$ 사이의 거리를 구하시오.`, `5`);
+  if (type===4) return createProblem('2-2-3', diff, `대각선의 길이가 $4\\sqrt{2}$인 정사각형의 한 변의 길이를 구하시오.`, `4`);
+  if (type===5) { return createProblem('2-2-3', diff, `가로 3, 세로 4, 높이 12인 직육면체의 공간 대각선의 길이를 구하시오.`, `13`); }
+  if (type===6) { return createProblem('2-2-3', diff, `밑면의 반지름이 3이고 높이가 4인 원뿔의 모선 길이를 구하시오.`, `5`); }
+  if (type===7) return createProblem('2-2-3', diff, `가로 4, 세로 8인 직사각형을 대각선으로 접었더니 겹친 부분이 이등변삼각형이 되었다. 이 삼각형의 밑변의 길이가 대각선 길이와 같은지 O, X로 답하시오.`, `X`);
+  if (type===8) return createProblem('2-2-3', diff, `정삼각형의 한 변의 길이가 $a$일 때 넓이를 구하는 공식을 쓰시오.`, `$\\frac{\\sqrt{3}}{4}a^2$`);
+  if (type===9) return createProblem('2-2-3', diff, `길이 10m인 사다리가 벽에 기대어 있다. 사다리 밑이 벽에서 6m 떨어져 있을 때, 사다리가 닿는 높이를 구하시오.`, `8m`);
+  if (type===10) return createProblem('2-2-3', diff, `대각선이 서로 수직인 마름모에서, 두 대각선의 길이가 각각 6과 8일 때 마름모의 넓이를 구하시오.`, `24`);
+  if (type===11) return createProblem('2-2-3', diff, `한 모서리의 길이가 6인 정육면체의 공간 대각선의 길이를 구하시오.`, `$6\\sqrt{3}$`);
+  if (type===12) return createProblem('2-2-3', diff, `세 변의 길이가 $x, x+1, x+2$인 직각삼각형에서 $x$의 값을 구하시오.`, `3`);
+  if (type===13) return createProblem('2-2-3', diff, `폭이 10인 직사각형 종이를 접어서 겹친 부분이 정삼각형이 되게 할 때, 정삼각형 한 변의 길이를 구하시오.`, `$\\frac{20\\sqrt{3}}{3}$`);
+  if (type===14) return createProblem('2-2-3', diff, `가로 6, 대각선 10인 직사각형의 넓이를 구하시오.`, `48`);
+  if (type===15) return createProblem('2-2-3', diff, `직각삼각형에서 빗변의 길이가 15이고 한 직각변의 길이가 9일 때, 다른 직각변의 길이를 구하시오.`, `12`);
+  if (type===16) return createProblem('2-2-3', diff, `좌표평면 위의 점 $(2,3)$과 $(8,6)$ 사이의 거리를 구하시오.`, `$3\\sqrt{5}$`);
+  if (type===17) return createProblem('2-2-3', diff, `정삼각형의 한 변의 길이가 10일 때, 높이의 길이를 구하시오.`, `$5\\sqrt{3}$`);
+  if (type===18) return createProblem('2-2-3', diff, `직사각형의 가로가 5cm, 대각선이 13cm일 때 세로의 길이를 구하시오.`, `12cm`);
+  if (type===19) return createProblem('2-2-3', diff, `밑면이 직사각형(3cm × 4cm)이고 높이가 12cm인 직육면체에서, 한 꼭짓점에서 대각선 맞은편 꼭짓점까지의 거리를 구하시오.`, `13cm`);
+  if (type===20) return createProblem('2-2-3', diff, `밑면 반지름이 5cm이고 모선의 길이가 13cm인 원뿔의 높이를 구하시오.`, `12cm`);
+  if (type===21) return createProblem('2-2-3', diff, `좌표평면 위에서 원점을 중심으로 하고 반지름이 5인 원 위의 한 점의 좌표를 예로 들어 하나 쓰시오.`, `(5,0) 등`);
+  if (type===22) return createProblem('2-2-3', diff, `직각삼각형의 세 변의 길이가 7, 24, 25일 때, 이 삼각형의 넓이를 구하시오.`, `84`);
+  return createProblem('2-2-3', diff, `피타고라스 정리를 이용해 직육면체의 겉면을 따라 가는 최단 거리를 구할 때, 어떤 도형을 평면에 펼쳐서 생각해야 하는지 쓰시오.`, `전개도`);
 };
 
 const pythHigh = (): Problem => {
   const diff = 'High';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type===1) return createProblem('2-2-3', diff, `밑면의 반지름이 3, 높이가 $4\\pi$인 원기둥이 있다. 밑면의 한 점 A에서 옆면을 따라 한 바퀴 감아 A 바로 위의 점 B까지 가는 최단 거리는?`, `$10\\pi$`);
-  if (type===2) return createProblem('2-2-3', diff, `좌표평면 위의 두 점 $A(0, 1), B(4, 3)$과 $x$축 위의 점 $P$에 대하여 $AP+BP$의 최솟값은?`, `$4\\sqrt{2}$`);
-  if (type===3) return createProblem('2-2-3', diff, `한 모서리의 길이가 6인 정사면체의 높이는?`, `$2\\sqrt{6}$`);
-  if (type===4) return createProblem('2-2-3', diff, `세 변의 길이가 13, 13, 10인 이등변삼각형의 넓이는?`, `60`);
-  if (type===5) return createProblem('2-2-3', diff, `두 원의 반지름이 3, 5이고 중심거리가 10일 때, 공통외접선의 길이는?`, `$\\sqrt{96}$`);
-  if (type===6) return createProblem('2-2-3', diff, `삼각형 $ABC$의 세 변의 중선의 길이의 제곱의 합과 세 변의 길이의 제곱의 합 사이의 관계 (파푸스 중선 정리) 공식은?`, `$AB^2+AC^2=2(AM^2+BM^2)$`);
-  if (type===7) return createProblem('2-2-3', diff, `유클리드의 방법으로 피타고라스 정리를 증명할 때, 직각에서 수선을 내린 양쪽 사각형의 넓이는 각각 무엇의 넓이와 같은가?`, `빗변의 제곱 정사각형을 나눈 직사각형`);
-  if (type===8) return createProblem('2-2-3', diff, `가로, 세로, 높이가 3, 4, 5인 직육면체의 겉면을 따라 꼭짓점에서 대각선 반대편 꼭짓점까지 가는 최단 거리는?`, `$\\sqrt{74}$`);
-  if (type===9) return createProblem('2-2-3', diff, `세 변의 길이가 $3, 4, a$인 삼각형이 둔각삼각형이 되기 위한 $a$의 범위는? (단, $a$가 가장 긴 변)`, `$5 < a < 7$`);
-  if (type===10) return createProblem('2-2-3', diff, `정삼각형 내부의 한 점 $P$에서 세 변에 이르는 거리가 각각 1, 2, 3일 때, 이 정삼각형의 높이는?`, `6`);
-  if (type===11) return createProblem('2-2-3', diff, `개미가 원기둥 컵의 바깥쪽 벽을 타고 반대편 가장자리까지 가는 최단 경로 문제에서 핵심은?`, `전개도에서 직선 거리`);
-  if (type===12) return createProblem('2-2-3', diff, `밑면 반지름 5, 모선 13인 원뿔의 부피는?`, `$100\\pi$`);
-  if (type===13) return createProblem('2-2-3', diff, `한 변의 길이가 2인 정육면체를 자른 단면인 정육각형의 넓이는?`, `$3\\sqrt{3}$`);
-  if (type===14) return createProblem('2-2-3', diff, `직각삼각형의 빗변 위에 그려진 반원의 넓이는 나머지 두 변 위에 그려진 반원의 넓이의 합과 같다. (O/X)`, `O`);
-  return createProblem('2-2-3', diff, `한 변의 길이가 10인 마름모의 한 대각선이 12일 때, 다른 대각선의 길이는?`, `16`);
+  if (type===1) return createProblem('2-2-3', diff, `밑면의 반지름이 3, 높이가 $4\\pi$인 원기둥이 있다. 밑면의 한 점 A에서 옆면을 따라 한 바퀴 감아 A 바로 위의 점 B까지 가는 최단 거리를 구하시오.`, `$10\\pi$`);
+  if (type===2) return createProblem('2-2-3', diff, `좌표평면 위의 두 점 $A(0, 1)$, $B(4, 3)$과 $x$축 위의 점 $P$에 대하여 $AP+BP$의 최솟값을 구하시오.`, `$4\\sqrt{2}$`);
+  if (type===3) return createProblem('2-2-3', diff, `한 모서리의 길이가 6인 정사면체의 높이를 구하시오.`, `$2\\sqrt{6}$`);
+  if (type===4) return createProblem('2-2-3', diff, `세 변의 길이가 13, 13, 10인 이등변삼각형의 넓이를 구하시오.`, `60`);
+  if (type===5) return createProblem('2-2-3', diff, `두 원의 반지름이 3, 5이고 중심거리가 10일 때, 공통외접선의 길이를 구하시오.`, `$\\sqrt{96}$`);
+  if (type===6) return createProblem('2-2-3', diff, `삼각형 $ABC$의 세 변의 중선의 길이의 제곱의 합과 세 변의 길이의 제곱의 합 사이의 관계(파푸스 중선 정리)의 공식을 쓰시오.`, `$AB^2+AC^2=2(AM^2+BM^2)$`);
+  if (type===7) return createProblem('2-2-3', diff, `유클리드의 방법으로 피타고라스 정리를 증명할 때, 직각에서 수선을 내린 양쪽 사각형의 넓이는 각각 무엇의 넓이와 같은지 설명하시오.`, `빗변의 제곱 정사각형을 나눈 직사각형`);
+  if (type===8) return createProblem('2-2-3', diff, `가로, 세로, 높이가 3, 4, 5인 직육면체의 겉면을 따라 꼭짓점에서 대각선 반대편 꼭짓점까지 가는 최단 거리를 구하시오.`, `$\\sqrt{74}$`);
+  if (type===9) return createProblem('2-2-3', diff, `세 변의 길이가 $3, 4, a$인 삼각형이 둔각삼각형이 되기 위한 $a$의 범위를 구하시오. (단, $a$가 가장 긴 변)`, `$5 < a < 7$`);
+  if (type===10) return createProblem('2-2-3', diff, `정삼각형 내부의 한 점 $P$에서 세 변에 이르는 거리가 각각 1, 2, 3일 때, 이 정삼각형의 높이를 구하시오.`, `6`);
+  if (type===11) return createProblem('2-2-3', diff, `개미가 원기둥 컵의 바깥쪽 벽을 타고 반대편 가장자리까지 가는 최단 경로 문제에서, 전개도를 어떻게 이용하는지 설명하시오.`, `옆면을 펼쳐 직사각형으로 만든 뒤 직선 거리 계산`);
+  if (type===12) return createProblem('2-2-3', diff, `밑면 반지름 5, 모선 13인 원뿔의 부피를 구하시오.`, `$100\\pi$`);
+  if (type===13) return createProblem('2-2-3', diff, `한 변의 길이가 2인 정육면체를 자른 단면이 정육각형이 될 때, 그 정육각형의 넓이를 구하시오.`, `$3\\sqrt{3}$`);
+  if (type===14) return createProblem('2-2-3', diff, `직각삼각형의 빗변 위에 그려진 반원의 넓이는 나머지 두 변 위에 그려진 반원의 넓이의 합과 같은지 O, X로 답하고, 이유를 간단히 설명하시오.`, `O`);
+  if (type===15) return createProblem('2-2-3', diff, `좌표평면 위의 점 $(x, y)$가 원 $x^2+y^2=25$ 위를 움직일 때, 이 점에서 원점까지의 거리가 항상 일정함을 설명하시오.`, `반지름이 5인 원이므로 항상 5`);
+  if (type===16) return createProblem('2-2-3', diff, `길이가 10m인 사다리를 벽에 기대었을 때, 밑부분이 벽에서 2m씩 멀어질 때마다 닿는 높이가 어떻게 변하는지 피타고라스 정리를 사용하여 일반식으로 나타내시오.`, `높이 = \\sqrt{10^2-x^2}`);
+  if (type===17) return createProblem('2-2-3', diff, `밑면 반지름이 r, 높이가 h인 원기둥의 대각선(밑면의 한 점과 윗면의 대각선 반대점 사이 거리)의 길이를 r, h로 나타내시오.`, `$\\sqrt{(2r)^2+h^2}$`);
+  if (type===18) return createProblem('2-2-3', diff, `정사각형의 한 꼭짓점에서 대각선 맞은편 꼭짓점까지의 거리는 한 변의 길이가 1일 때 얼마인지, 그리고 한 변의 길이가 a일 때 일반식을 쓰시오.`, `$\\sqrt{2}, a\\sqrt{2}$`);
+  if (type===19) return createProblem('2-2-3', diff, `직각삼각형의 세 변 길이가 9, 40, 41일 때, 이 삼각형의 넓이와 둘레를 구하시오.`, `넓이 180, 둘레 90`);
+  if (type===20) return createProblem('2-2-3', diff, `정사면체의 한 모서리 길이가 a일 때, 높이와 한 면의 높이를 각각 a로 나타내시오.`, `높이 = \\frac{\\sqrt{6}}{3}a 등`);
+  if (type===21) return createProblem('2-2-3', diff, `원뿔 전개도에서 중심각과 모선, 밑면 반지름 사이의 관계를 피타고라스 정리와 닮음을 이용해 설명하시오.`, `모선이 빗변 역할`);
+  if (type===22) return createProblem('2-2-3', diff, `두 직육면체의 모서리 길이의 비가 1:3일 때, 대각선 길이의 비와 부피의 비를 각각 구하시오.`, `대각선 1:3, 부피 1:27`);
+  return createProblem('2-2-3', diff, `공간도형에서 피타고라스 정리가 어떻게 확장되어 사용되는지, 예를 들어 한 가지 경우를 들어 설명하시오.`, `직육면체 대각선 등`);
 };
 
 // ==========================================
@@ -273,65 +297,89 @@ const pythHigh = (): Problem => {
 
 const probLow = (): Problem => {
   const diff = 'Low';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type===1) return createProblem('2-2-4', diff, `주사위 한 개를 던질 때, 짝수의 눈이 나올 확률은?`, `1/2`);
-  if (type===2) return createProblem('2-2-4', diff, `동전 2개를 동시에 던질 때, 모두 앞면이 나올 확률은?`, `1/4`);
-  if (type===3) return createProblem('2-2-4', diff, `1부터 10까지의 자연수가 적힌 10장의 카드 중에서 한 장을 뽑을 때, 3의 배수가 나올 확률은?`, `3/10`);
-  if (type===4) return createProblem('2-2-4', diff, `두 사람이 가위바위보를 할 때 비길 확률은?`, `1/3`);
-  if (type===5) return createProblem('2-2-4', diff, `어떤 사건이 일어날 확률을 $p$라고 할 때, $p$의 범위는?`, `$0 \\le p \\le 1$`);
-  if (type===6) return createProblem('2-2-4', diff, `반드시 일어나는 사건의 확률은?`, `1`);
-  if (type===7) return createProblem('2-2-4', diff, `절대로 일어나지 않는 사건의 확률은?`, `0`);
-  if (type===8) return createProblem('2-2-4', diff, `사건 A가 일어날 확률이 $p$일 때, 일어나지 않을 확률은?`, `$1-p$`);
-  if (type===9) return createProblem('2-2-4', diff, `A, B, C, D 네 사람이 한 줄로 설 때, A가 맨 앞에 설 확률은?`, `1/4`);
-  if (type===10) return createProblem('2-2-4', diff, `서로 다른 주사위 2개를 던질 때, 눈의 합이 2일 확률은?`, `1/36`);
-  if (type===11) return createProblem('2-2-4', diff, `동전 1개를 던질 때 뒷면이 나올 확률은?`, `1/2`);
-  if (type===12) return createProblem('2-2-4', diff, `주사위 1개를 던질 때 7 이상의 눈이 나올 확률은?`, `0`);
-  if (type===13) return createProblem('2-2-4', diff, `남학생 2명, 여학생 3명 중에서 1명을 뽑을 때 남학생일 확률은?`, `2/5`);
-  if (type===14) return createProblem('2-2-4', diff, `서로 다른 동전 3개를 던질 때 일어나는 모든 경우의 수는?`, `8`);
-  return createProblem('2-2-4', diff, `A, B 두 사람이 한 줄로 설 때 B가 앞에 설 확률은?`, `1/2`);
+  if (type===1) return createProblem('2-2-4', diff, `주사위 한 개를 던질 때, 짝수의 눈이 나올 확률을 구하시오.`, `1/2`);
+  if (type===2) return createProblem('2-2-4', diff, `동전 2개를 동시에 던질 때, 모두 앞면이 나올 확률을 구하시오.`, `1/4`);
+  if (type===3) return createProblem('2-2-4', diff, `1부터 10까지의 자연수가 적힌 10장의 카드 중에서 한 장을 뽑을 때, 3의 배수가 나올 확률을 구하시오.`, `3/10`);
+  if (type===4) return createProblem('2-2-4', diff, `두 사람이 가위바위보를 할 때 비길 확률을 구하시오.`, `1/3`);
+  if (type===5) return createProblem('2-2-4', diff, `어떤 사건이 일어날 확률을 $p$라고 할 때, $p$의 범위를 쓰시오.`, `$0 \\le p \\le 1$`);
+  if (type===6) return createProblem('2-2-4', diff, `반드시 일어나는 사건의 확률을 쓰시오.`, `1`);
+  if (type===7) return createProblem('2-2-4', diff, `절대로 일어나지 않는 사건의 확률을 쓰시오.`, `0`);
+  if (type===8) return createProblem('2-2-4', diff, `사건 A가 일어날 확률이 $p$일 때, A가 일어나지 않을 확률을 $p$를 사용하여 나타내시오.`, `$1-p$`);
+  if (type===9) return createProblem('2-2-4', diff, `A, B, C, D 네 사람이 한 줄로 설 때, A가 맨 앞에 설 확률을 구하시오.`, `1/4`);
+  if (type===10) return createProblem('2-2-4', diff, `서로 다른 주사위 2개를 던질 때, 눈의 합이 2가 될 확률을 구하시오.`, `1/36`);
+  if (type===11) return createProblem('2-2-4', diff, `동전 1개를 던질 때 뒷면이 나올 확률을 구하시오.`, `1/2`);
+  if (type===12) return createProblem('2-2-4', diff, `주사위 1개를 던질 때 7 이상의 눈이 나올 확률을 쓰시오.`, `0`);
+  if (type===13) return createProblem('2-2-4', diff, `남학생 2명, 여학생 3명 중에서 1명을 뽑을 때 남학생이 뽑힐 확률을 구하시오.`, `2/5`);
+  if (type===14) return createProblem('2-2-4', diff, `서로 다른 동전 3개를 던질 때 가능한 모든 경우의 수를 구하시오.`, `8`);
+  if (type===15) return createProblem('2-2-4', diff, `주사위 한 개를 던질 때 소수(2,3,5)가 나올 확률을 구하시오.`, `1/2`);
+  if (type===16) return createProblem('2-2-4', diff, `주머니에 빨간 공 2개와 파란 공 3개가 있을 때, 한 개를 꺼져 빨간 공이 나올 확률을 구하시오.`, `2/5`);
+  if (type===17) return createProblem('2-2-4', diff, `동전 2개를 동시에 던질 때, 적어도 한 개는 앞면이 나올 확률을 구하시오.`, `3/4`);
+  if (type===18) return createProblem('2-2-4', diff, `1부터 5까지의 번호가 적힌 카드 5장 중에서 한 장을 뽑을 때, 짝수가 나올 확률을 구하시오.`, `2/5`);
+  if (type===19) return createProblem('2-2-4', diff, `사건 A의 확률이 0.25일 때, A가 일어나지 않을 확률을 구하시오.`, `0.75`);
+  if (type===20) return createProblem('2-2-4', diff, `주사위 1개를 던질 때, 1 또는 2가 나올 확률을 구하시오.`, `1/3`);
+  if (type===21) return createProblem('2-2-4', diff, `단일 시행에서 일어날 수 있는 모든 경우의 수 중에서 어떤 사건이 일어나는 경우의 수를 세어 확률을 구하는 방법을 무엇이라고 하는지 쓰시오.`, `고전적 확률`);
+  if (type===22) return createProblem('2-2-4', diff, `어떤 사건 A의 확률이 0.6일 때, 사건 A 또는 A가 아닌 사건 중 둘 중 하나가 일어나는 확률을 쓰시오.`, `1`);
+  return createProblem('2-2-4', diff, `동전 1개를 두 번 던질 때, 두 번 모두 같은 면이 나올 확률을 구하시오.`, `1/2`);
 };
 
 const probMid = (): Problem => {
   const diff = 'Mid';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
   
-  if (type===1) { const t = 7; return createProblem('2-2-4', diff, `서로 다른 두 개의 주사위를 동시에 던질 때, 두 눈의 수의 합이 ${t}일 확률은?`, `1/6`); }
-  if (type===2) return createProblem('2-2-4', diff, `동전 3개를 동시에 던질 때, 적어도 한 개는 앞면이 나올 확률은?`, `7/8`);
-  if (type===3) return createProblem('2-2-4', diff, `5명의 학생 중에서 대표 2명을 뽑을 때, A가 뽑힐 확률은?`, `2/5`);
-  if (type===4) return createProblem('2-2-4', diff, `주머니 속에 흰 공 3개, 검은 공 2개가 들어 있다. 공을 한 개 꺼내 확인하고 다시 넣는 시행을 2번 반복할 때, 2번 모두 흰 공이 나올 확률은?`, `9/25`);
-  if (type===5) return createProblem('2-2-4', diff, `주머니 속에 흰 공 3개, 검은 공 2개가 들어 있다. 공을 한 개 꺼내 확인하고 다시 넣지 않을 때, 2번 모두 흰 공이 나올 확률은?`, `3/10`);
-  if (type===6) return createProblem('2-2-4', diff, `1부터 20까지의 카드가 있다. 4의 배수 또는 9의 배수를 뽑을 확률은?`, `7/20`);
-  if (type===7) return createProblem('2-2-4', diff, `4등분 된 원판 과녁에 화살을 쏠 때, 특정한 한 구역을 맞힐 확률은?`, `1/4`);
-  if (type===8) return createProblem('2-2-4', diff, `부모님을 포함하여 4명이 일렬로 설 때, 부모님이 이웃하여 설 확률은?`, `1/2`);
-  if (type===9) return createProblem('2-2-4', diff, `내일 비가 올 확률이 0.3, 모레 비가 올 확률이 0.4이다. 이틀 모두 비가 오지 않을 확률은?`, `0.42`);
-  if (type===10) return createProblem('2-2-4', diff, `비가 올 확률이 0.3, 0.4이다. 이틀 중 하루만 비가 올 확률은?`, `0.46`);
-  if (type===11) return createProblem('2-2-4', diff, `주사위 2개를 던져서 나온 눈의 수가 서로 같을 확률은?`, `1/6`);
-  if (type===12) return createProblem('2-2-4', diff, `남학생 3명, 여학생 2명을 한 줄로 세울 때, 여학생끼리 이웃할 확률은?`, `2/5`);
-  if (type===13) return createProblem('2-2-4', diff, `시험에 A가 합격할 확률 1/2, B가 합격할 확률 1/3이다. 두 사람 모두 불합격할 확률은?`, `1/3`);
-  if (type===14) return createProblem('2-2-4', diff, `주사위 1개를 2번 던질 때, 첫 번째는 짝수, 두 번째는 홀수가 나올 확률은?`, `1/4`);
-  return createProblem('2-2-4', diff, `A, B, C, D, E 5명 중 반장 1명, 부반장 1명을 뽑을 때 A가 반장이 될 확률은?`, `1/5`);
+  if (type===1) { const t = 7; return createProblem('2-2-4', diff, `서로 다른 두 개의 주사위를 동시에 던질 때, 두 눈의 수의 합이 ${t}일 확률을 구하시오.`, `1/6`); }
+  if (type===2) return createProblem('2-2-4', diff, `동전 3개를 동시에 던질 때, 적어도 한 개는 앞면이 나올 확률을 구하시오.`, `7/8`);
+  if (type===3) return createProblem('2-2-4', diff, `5명의 학생 중에서 대표 2명을 뽑을 때, A가 대표 중 한 명으로 뽑힐 확률을 구하시오.`, `2/5`);
+  if (type===4) return createProblem('2-2-4', diff, `주머니 속에 흰 공 3개, 검은 공 2개가 들어 있다. 공을 한 개 꺼내 확인하고 다시 넣는 시행을 2번 반복할 때, 2번 모두 흰 공이 나올 확률을 구하시오.`, `9/25`);
+  if (type===5) return createProblem('2-2-4', diff, `주머니 속에 흰 공 3개, 검은 공 2개가 들어 있다. 공을 한 개 꺼내 확인하고 다시 넣지 않을 때, 2번 모두 흰 공이 나올 확률을 구하시오.`, `3/10`);
+  if (type===6) return createProblem('2-2-4', diff, `1부터 20까지의 카드가 있다. 4의 배수 또는 9의 배수를 뽑을 확률을 구하시오.`, `7/20`);
+  if (type===7) return createProblem('2-2-4', diff, `4등분 된 원판 과녁에 화살을 쏠 때, 특정한 한 구역을 맞힐 확률을 구하시오.`, `1/4`);
+  if (type===8) return createProblem('2-2-4', diff, `부모님을 포함하여 4명이 일렬로 설 때, 부모님이 이웃하여 설 확률을 구하시오.`, `1/2`);
+  if (type===9) return createProblem('2-2-4', diff, `내일 비가 올 확률이 0.3, 모레 비가 올 확률이 0.4이다. 이틀 모두 비가 오지 않을 확률을 구하시오.`, `0.42`);
+  if (type===10) return createProblem('2-2-4', diff, `어떤 지역에서 이틀 동안 비가 올 확률이 각각 0.3, 0.4일 때, 이틀 중 하루만 비가 올 확률을 구하시오. (두 날의 비는 서로 독립이라고 가정)`, `0.46`);
+  if (type===11) return createProblem('2-2-4', diff, `주사위 2개를 던져서 나온 눈의 수가 서로 같을 확률을 구하시오.`, `1/6`);
+  if (type===12) return createProblem('2-2-4', diff, `남학생 3명, 여학생 2명을 한 줄로 세울 때, 여학생끼리 이웃하여 설 확률을 구하시오.`, `2/5`);
+  if (type===13) return createProblem('2-2-4', diff, `시험에 A가 합격할 확률이 1/2, B가 합격할 확률이 1/3일 때, 두 사람 모두 불합격할 확률을 구하시오. (독립 시행)`, `1/3`);
+  if (type===14) return createProblem('2-2-4', diff, `주사위 1개를 2번 던질 때, 첫 번째는 짝수, 두 번째는 홀수가 나올 확률을 구하시오.`, `1/4`);
+  if (type===15) return createProblem('2-2-4', diff, `1부터 10까지의 수 중에서 서로 다른 두 수를 뽑아 더했을 때, 그 합이 9가 될 확률을 구하시오.`, `1/15`);
+  if (type===16) return createProblem('2-2-4', diff, `문제 5개짜리 OX퀴즈에서 무작위로 답을 찍을 때, 정확히 3개를 맞힐 확률을 구하시오.`, `$\\binom{5}{3} (1/2)^5 = 10/32$`);
+  if (type===17) return createProblem('2-2-4', diff, `한 상자에 흰 공 2개와 검은 공 3개가 있다. 공을 한 개 꺼낸 뒤 다시 넣고, 또 한 개를 꺼낼 때, 색이 서로 다르게 나올 확률을 구하시오.`, `6/25`);
+  if (type===18) return createProblem('2-2-4', diff, `두 자리 자연수 중에서 십의 자리가 3인 수를 임의로 하나 고를 때, 그 수가 3의 배수일 확률을 구하시오.`, `1/3`);
+  if (type===19) return createProblem('2-2-4', diff, `추를 두 번 던져서 나온 눈을 각각 a, b라고 할 때, a+b가 짝수일 확률을 구하시오.`, `1/2`);
+  if (type===20) return createProblem('2-2-4', diff, `두 개의 서로 다른 주사위를 던질 때, 나오는 수의 곱이 6의 배수가 될 확률을 구하시오.`, `1/2`);
+  if (type===21) return createProblem('2-2-4', diff, `주머니에 A, B, C, D 네 글자가 적힌 카드가 각각 1장씩 있다. 이 중 2장을 뽑아 순서대로 늘어놓을 때, 'AB'가 나올 확률을 구하시오.`, `1/12`);
+  if (type===22) return createProblem('2-2-4', diff, `두 사건 A, B가 서로 배반 사건일 때, P(A∪B)를 P(A), P(B)로 나타내시오.`, `P(A)+P(B)`);
+  return createProblem('2-2-4', diff, `서로 다른 4개의 공을 한 줄로 나열할 때, 특정한 한 공이 항상 가운데 두 자리에만 오는 경우의 수를 구하시오.`, `12가지`);
 };
 
 const probHigh = (): Problem => {
   const diff = 'High';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type===1) return createProblem('2-2-4', diff, `4개의 윷가락을 던질 때, 뒷면이 2개(개)가 나올 확률은? (단, 등과 배가 나올 확률은 같다고 가정한다)`, `3/8`);
-  if (type===2) return createProblem('2-2-4', diff, `서로 다른 주사위 2개를 동시에 던질 때, 나오는 눈의 수의 차가 2 이하일 확률은?`, `2/3`);
-  if (type===3) return createProblem('2-2-4', diff, `주머니 A에는 흰 공 2개, 검은 공 3개가 들어있고, 주머니 B에는 흰 공 3개, 검은 공 1개가 들어있다. 두 주머니에서 각각 하나씩 꺼낼 때 둘 다 흰 공일 확률은?`, `3/10`);
-  if (type===4) return createProblem('2-2-4', diff, `A, B 두 사람이 가위바위보를 한 번 할 때, A가 이길 확률은?`, `1/3`);
-  if (type===5) return createProblem('2-2-4', diff, `1부터 9까지의 숫자가 적힌 카드 중에서 2장을 뽑아 두 자리 정수를 만들 때, 그 수가 3의 배수일 확률은?`, `1/3`);
-  if (type===6) return createProblem('2-2-4', diff, `명중률이 각각 0.8, 0.6인 두 사수가 동시에 표적을 쏠 때, 표적이 총알에 맞을 확률은? (적어도 한 명 명중)`, `0.92`);
-  if (type===7) return createProblem('2-2-4', diff, `10개의 제비 중 당첨 제비가 3개 있다. A가 먼저 하나 뽑고, 다시 넣지 않은 상태에서 B가 하나 뽑을 때 B가 당첨될 확률은?`, `3/10`);
-  if (type===8) return createProblem('2-2-4', diff, `한 개의 주사위를 두 번 던져서 나온 눈의 수를 차례로 $a, b$라 할 때, $ab$가 짝수일 확률은?`, `3/4`);
-  if (type===9) return createProblem('2-2-4', diff, `0, 1, 2, 3, 4의 숫자가 적힌 5장의 카드 중 2장을 뽑아 두 자리 자연수를 만들 때, 그 수가 짝수일 확률은?`, `5/8`);
-  if (type===10) return createProblem('2-2-4', diff, `세 사람이 가위바위보를 할 때, 승부가 나지 않을(비길) 확률은?`, `1/3`);
-  if (type===11) return createProblem('2-2-4', diff, `주사위 2개를 던져 나온 눈의 합이 5의 배수가 될 확률은? (5, 10)`, `7/36`);
-  if (type===12) return createProblem('2-2-4', diff, `길이가 2, 4, 6, 8인 막대 4개 중 3개를 고를 때, 삼각형이 만들어질 확률은?`, `1/4`);
-  if (type===13) return createProblem('2-2-4', diff, `어떤 야구 선수의 타율이 0.3이다. 이 선수가 3번 타석에 들어서서 적어도 한 번 안타를 칠 확률은?`, `0.657`);
-  if (type===14) return createProblem('2-2-4', diff, `주머니에 빨간 공 4개, 파란 공 6개가 있다. 연속해서 2개를 꺼낼 때 두 공의 색이 다를 확률은? (비복원)`, `8/15`);
-  return createProblem('2-2-4', diff, `5지 선다형 문제 3개를 임의로 찍어서 모두 맞힐 확률은?`, `1/125`);
+  if (type===1) return createProblem('2-2-4', diff, `4개의 윷가락을 던질 때, 뒷면이 정확히 2개(개)가 나올 확률을 구하시오. (단, 등과 배가 나올 확률은 같다고 가정한다.)`, `3/8`);
+  if (type===2) return createProblem('2-2-4', diff, `서로 다른 주사위 2개를 동시에 던질 때, 나오는 눈의 수의 차가 2 이하일 확률을 구하시오.`, `2/3`);
+  if (type===3) return createProblem('2-2-4', diff, `주머니 A에는 흰 공 2개, 검은 공 3개가 들어있고, 주머니 B에는 흰 공 3개, 검은 공 1개가 들어있다. 두 주머니에서 각각 하나씩 꺼낼 때 둘 다 흰 공일 확률을 구하시오.`, `3/10`);
+  if (type===4) return createProblem('2-2-4', diff, `A, B 두 사람이 가위바위보를 한 번 할 때, A가 이길 확률을 구하시오.`, `1/3`);
+  if (type===5) return createProblem('2-2-4', diff, `1부터 9까지의 숫자가 적힌 카드 중에서 2장을 뽑아 두 자리 정수를 만들 때, 그 수가 3의 배수일 확률을 구하시오.`, `1/3`);
+  if (type===6) return createProblem('2-2-4', diff, `명중률이 각각 0.8, 0.6인 두 사수가 동시에 표적을 쏠 때, 표적이 총알에 맞을 확률(적어도 한 명 명중)을 구하시오.`, `0.92`);
+  if (type===7) return createProblem('2-2-4', diff, `10개의 제비 중 당첨 제비가 3개 있다. A가 먼저 하나 뽑고, 다시 넣지 않은 상태에서 B가 하나 뽑을 때 B가 당첨될 확률을 구하시오.`, `3/10`);
+  if (type===8) return createProblem('2-2-4', diff, `한 개의 주사위를 두 번 던져서 나온 눈의 수를 차례로 $a, b$라 할 때, 곱 $ab$가 짝수일 확률을 구하시오.`, `3/4`);
+  if (type===9) return createProblem('2-2-4', diff, `0, 1, 2, 3, 4의 숫자가 적힌 5장의 카드 중 2장을 뽑아 두 자리 자연수를 만들 때, 그 수가 짝수일 확률을 구하시오.`, `5/8`);
+  if (type===10) return createProblem('2-2-4', diff, `세 사람이 가위바위보를 할 때, 승부가 나지 않을(비길) 확률을 구하시오.`, `1/3`);
+  if (type===11) return createProblem('2-2-4', diff, `주사위 2개를 던져 나온 눈의 합이 5의 배수(5 또는 10)가 될 확률을 구하시오.`, `7/36`);
+  if (type===12) return createProblem('2-2-4', diff, `길이가 2, 4, 6, 8인 막대 4개 중 3개를 골라 삼각형을 만들 수 있을 확률을 구하시오.`, `1/4`);
+  if (type===13) return createProblem('2-2-4', diff, `어떤 야구 선수의 타율이 0.3이다. 이 선수가 3번 타석에 들어서서 적어도 한 번 안타를 칠 확률을 구하시오.`, `0.657`);
+  if (type===14) return createProblem('2-2-4', diff, `주머니에 빨간 공 4개, 파란 공 6개가 있다. 연속해서 2개를 꺼낼 때 두 공의 색이 서로 다를 확률(비복원)을 구하시오.`, `8/15`);
+  if (type===15) return createProblem('2-2-4', diff, `어떤 시험에서 5지 선다형 문제 3개를 임의로 찍어서 모두 맞힐 확률을 구하시오.`, `1/125`);
+  if (type===16) return createProblem('2-2-4', diff, `서로 다른 3개의 주사위를 던질 때, 나오는 눈의 수가 모두 다를 확률을 구하시오.`, `5/9`);
+  if (type===17) return createProblem('2-2-4', diff, `어떤 학생이 객관식 4지 선다형 문제 5개를 전부 찍어서 풀었다. 3개 이상 맞힐 확률을 구하시오.`, `계산형`);
+  if (type===18) return createProblem('2-2-4', diff, `한 상자에 노란 공 4개, 파란 공 3개, 빨간 공 3개가 있다. 이 중 2개를 동시에 꺼낼 때, 같은 색 공이 나올 확률을 구하시오.`, `19/45`);
+  if (type===19) return createProblem('2-2-4', diff, `서로 독립인 두 사건 A, B에 대해 P(A)=0.4, P(B)=0.5일 때, A∩B, A∪B의 확률을 각각 구하시오.`, `0.2, 0.7`);
+  if (type===20) return createProblem('2-2-4', diff, `어떤 공장이 있는 날에 고장을 일으킬 확률이 0.1이고, 서로 다른 두 날의 고장은 독립이라 할 때, 이틀 연속으로 고장이 한 번도 일어나지 않을 확률을 구하시오.`, `0.81`);
+  if (type===21) return createProblem('2-2-4', diff, `3개의 서로 다른 주사위를 던질 때, 나온 눈의 합이 9가 될 확률을 구하시오.`, `1/9`);
+  if (type===22) return createProblem('2-2-4', diff, `동전을 4번 던질 때, 앞면이 나오는 횟수가 뒷면이 나오는 횟수보다 많을 확률을 구하시오.`, `5/16`);
+  return createProblem('2-2-4', diff, `확률이 0.2인 사건 A와 0.5인 사건 B가 서로 배반일 때, A∪B의 확률과 A'∩B의 확률을 구하시오.`, `0.7, 0.4`);
 };
 
 // ==========================================

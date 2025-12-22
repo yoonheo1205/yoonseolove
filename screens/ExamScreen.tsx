@@ -72,7 +72,7 @@ export default function ExamScreen({ config, onBack }: Props) {
   return (
     <div className="space-y-6 pb-20">
       {/* Controls */}
-      <div className="sticky top-0 bg-white/95 backdrop-blur z-40 py-4 border-b flex flex-wrap gap-2 justify-between items-center px-4 -mx-4 md:mx-0 md:px-0">
+      <div className="sticky top-0 bg-white/95 backdrop-blur z-40 py-4 border-b flex flex-wrap gap-2 justify-between items-center px-2 sm:px-0">
         <div className="flex items-center gap-2">
           <button onClick={onBack} className="p-2 hover:bg-gray-100 rounded-full">
             <ChevronLeft size={24} />
