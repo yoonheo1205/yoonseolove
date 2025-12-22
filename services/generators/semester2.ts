@@ -23,65 +23,89 @@ const createProblem = (
 
 const shapeLow = (): Problem => {
   const diff = 'Low';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type === 1) { const v = randomInt(40, 80); return createProblem('2-2-1', diff, `이등변삼각형 $ABC$ ($AB=AC$)에서 $\\angle A = ${v}^\\circ$일 때, $\\angle B$의 크기는?`, `$${(180-v)/2}^\\circ$`); }
-  if (type === 2) { const b = randomInt(30, 70); return createProblem('2-2-1', diff, `이등변삼각형 $ABC$ ($AB=AC$)에서 $\\angle B = ${b}^\\circ$일 때, $\\angle A$의 크기는?`, `$${180-2*b}^\\circ$`); }
-  if (type === 3) return createProblem('2-2-1', diff, `직각삼각형의 빗변의 길이와 한 예각의 크기가 각각 같을 때, 두 삼각형은 합동이다. 이때 사용되는 합동 조건은?`, `RHA 합동`);
-  if (type === 4) { const a = randomInt(50, 70); return createProblem('2-2-1', diff, `$\\triangle ABC$의 외심이 $O$이고 $\\angle A = ${a}^\\circ$일 때, $\\angle BOC$의 크기는?`, `$${2*a}^\\circ$`); }
-  if (type === 5) { const a = randomInt(40, 80); return createProblem('2-2-1', diff, `$\\triangle ABC$의 내심이 $I$이고 $\\angle A = ${a}^\\circ$일 때, $\\angle BIC$의 크기는?`, `$${90 + a/2}^\\circ$`); }
-  if (type === 6) { const a = randomInt(60, 120); return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $\\angle A = ${a}^\\circ$일 때, 이웃하는 각 $\\angle B$의 크기는?`, `$${180-a}^\\circ$`); }
-  if (type === 7) { const a = randomInt(3, 10); return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $AB=${a}$cm일 때, 대변 $CD$의 길이는?`, `${a}cm`); }
-  if (type === 8) { const d = randomInt(5, 15); return createProblem('2-2-1', diff, `직사각형의 한 대각선의 길이가 ${d}cm일 때, 다른 대각선의 길이는?`, `${d}cm`); }
-  if (type === 9) return createProblem('2-2-1', diff, `마름모의 두 대각선이 서로 이루는 각의 크기는 몇 도인가?`, `$90^\\circ$`);
-  if (type === 10) return createProblem('2-2-1', diff, `정사각형의 한 내각의 크기는?`, `$90^\\circ$`);
-  if (type === 11) { const n = randomItem([5, 6, 8]); return createProblem('2-2-1', diff, `정${n}각형의 내각의 총합은?`, `$${180*(n-2)}^\\circ$`); }
-  if (type === 12) { const n = randomItem([9, 10, 12]); return createProblem('2-2-1', diff, `정${n}각형의 한 외각의 크기는?`, `$${360/n}^\\circ$`); }
-  if (type === 13) return createProblem('2-2-1', diff, `평행사변형이 마름모가 되기 위한 조건은? (두 글자)`, `이웃`); // Prompting key concept
-  if (type === 14) return createProblem('2-2-1', diff, `직각삼각형의 합동 조건 중 '빗변(H)과 다른 한 변(S)'을 이용한 합동은?`, `RHS 합동`);
-  return createProblem('2-2-1', diff, `삼각형의 세 내각의 이등분선의 교점은 무엇인가?`, `내심`);
+  if (type === 1) { const v = randomInt(40, 80); return createProblem('2-2-1', diff, `이등변삼각형 $ABC$에서 $AB=AC$이고, $\\angle A = ${v}^\\circ$일 때, 밑각 $\\angle B$의 크기를 구하시오.`, `$${(180-v)/2}^\\circ$`); }
+  if (type === 2) { const b = randomInt(30, 70); return createProblem('2-2-1', diff, `이등변삼각형 $ABC$에서 $AB=AC$이고, 밑각 $\\angle B = ${b}^\\circ$일 때, 꼭짓각 $\\angle A$의 크기를 구하시오.`, `$${180-2*b}^\\circ$`); }
+  if (type === 3) return createProblem('2-2-1', diff, `직각삼각형에서 빗변의 길이와 한 예각의 크기가 각각 같은 두 삼각형이 있다. 이 두 삼각형이 합동임을 보일 때 사용하는 합동 조건은 무엇인가요?`, `RHA 합동`);
+  if (type === 4) { const a = randomInt(50, 70); return createProblem('2-2-1', diff, `$\\triangle ABC$의 외심을 $O$라 할 때, $\\angle A = ${a}^\\circ$이면 중심각 $\\angle BOC$의 크기를 구하시오.`, `$${2*a}^\\circ$`); }
+  if (type === 5) { const a = randomInt(40, 80); return createProblem('2-2-1', diff, `$\\triangle ABC$의 내심을 $I$라 할 때, $\\angle A = ${a}^\\circ$이면 $\\angle BIC$의 크기를 구하시오.`, `$${90 + a/2}^\\circ$`); }
+  if (type === 6) { const a = randomInt(60, 120); return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $\\angle A = ${a}^\\circ$일 때, 이웃한 각 $\\angle B$의 크기를 구하시오.`, `$${180-a}^\\circ$`); }
+  if (type === 7) { const a = randomInt(3, 10); return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $AB=${a}\\text{cm}$일 때, 대변 $CD$의 길이를 구하시오.`, `${a}\\text{cm}`); }
+  if (type === 8) { const d = randomInt(5, 15); return createProblem('2-2-1', diff, `직사각형의 한 대각선의 길이가 ${d}\\text{cm}$일 때, 다른 대각선의 길이를 구하시오.`, `${d}\\text{cm}`); }
+  if (type === 9) return createProblem('2-2-1', diff, `마름모의 두 대각선이 이루는 각의 크기를 구하시오.`, `$90^\\circ$`);
+  if (type === 10) return createProblem('2-2-1', diff, `정사각형의 한 내각의 크기를 구하시오.`, `$90^\\circ$`);
+  if (type === 11) { const n = randomItem([5, 6, 8]); return createProblem('2-2-1', diff, `정${n}각형의 내각의 합을 구하시오.`, `$${180*(n-2)}^\\circ$`); }
+  if (type === 12) { const n = randomItem([9, 10, 12]); return createProblem('2-2-1', diff, `정${n}각형의 한 외각의 크기를 구하시오.`, `$${360/n}^\\circ$`); }
+  if (type === 13) return createProblem('2-2-1', diff, `평행사변형이 마름모가 되기 위한 조건을 서술하시오.`, `서로 이웃한 두 변의 길이가 같다.`);
+  if (type === 14) return createProblem('2-2-1', diff, `직각삼각형의 합동 조건 중에서 빗변과 다른 한 변의 길이가 각각 같은 경우의 합동 조건을 기호로 쓰시오.`, `RHS 합동`);
+  if (type === 15) return createProblem('2-2-1', diff, `삼각형의 세 내각의 이등분선의 교점을 무엇이라고 하는가?`, `내심`);
+  if (type === 16) return createProblem('2-2-1', diff, `원에서 중심과 꼭짓점을 잇는 선분의 길이가 모두 같은 삼각형을 무엇이라고 하는가?`, `정삼각형`);
+  if (type === 17) return createProblem('2-2-1', diff, `사다리꼴에서 서로 평행한 두 변을 무엇이라고 하는지 쓰시오.`, `밑변과 윗변`);
+  if (type === 18) return createProblem('2-2-1', diff, `평행사변형의 두 대각선은 서로 어떤 관계인지 서술하시오.`, `서로를 이등분한다.`);
+  if (type === 19) return createProblem('2-2-1', diff, `정육각형의 한 내각의 크기를 구하시오.`, `$120^\\circ$`);
+  if (type === 20) return createProblem('2-2-1', diff, `한 꼭짓점에서 나오는 정다각형의 한 외각과 인접한 내각의 관계를 말로 설명하시오.`, `합이 180^\\circ 이다.`);
+  if (type === 21) return createProblem('2-2-1', diff, `원에서 한 호에 대한 중심각의 크기와 원주각의 크기 사이의 관계를 말하시오.`, `중심각의 크기는 원주각의 두 배이다.`);
+  if (type === 22) return createProblem('2-2-1', diff, `마름모의 성질 중, 네 변의 길이와 대각선의 관계를 각각 한 문장으로 설명하시오.`, `네 변의 길이는 모두 같고, 두 대각선은 서로 수직으로 이등분한다.`);
+  return createProblem('2-2-1', diff, `직사각형과 정사각형의 공통된 성질을 한 가지 쓰시오.`, `네 각의 크기가 모두 90^\\circ 이다.`);
 };
 
 const shapeMid = (): Problem => {
   const diff = 'Mid';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type === 1) { const angle = randomInt(20, 50); return createProblem('2-2-1', diff, `직사각형 모양의 종이를 접었다. 접힌 각도가 ${angle}^\\circ$일 때, 엇각의 성질을 이용하여 구한 겹친 부분의 삼각형은 어떤 삼각형인가?`, `이등변삼각형`); }
-  if (type === 2) { const r = randomInt(3, 8); return createProblem('2-2-1', diff, `$\\triangle ABC$의 외심 $O$에서 꼭짓점 $A$까지의 거리가 ${r}cm이다. 이때 꼭짓점 $B$까지의 거리는?`, `${r}cm`); }
-  if (type === 3) { const hyp = randomInt(6, 14) * 2; return createProblem('2-2-1', diff, `빗변의 길이가 ${hyp}cm인 직각삼각형의 외접원의 반지름 길이는?`, `${hyp/2}cm`); }
-  if (type === 4) { const b = 30, c = 70; return createProblem('2-2-1', diff, `$\\triangle ABC$에서 $\\angle B=${b}^\\circ, \\angle C=${c}^\\circ$이다. 내심 $I$에 대하여 $\\angle IAC$의 크기는?`, `$${(180-b-c)/2}^\\circ$`); }
-  if (type === 5) { const a = 5, b = 8; return createProblem('2-2-1', diff, `이웃하는 두 변의 길이가 각각 ${a}cm, ${b}cm인 평행사변형의 둘레의 길이는?`, `${2*(a+b)}cm`); }
-  if (type === 6) { const d1 = 8, d2 = 6; return createProblem('2-2-1', diff, `두 대각선의 길이가 각각 ${d1}cm, ${d2}cm인 마름모의 넓이는?`, `${d1*d2/2}cm^2$`); }
-  if (type === 7) { const u = 6, l = 10; return createProblem('2-2-1', diff, `윗변의 길이가 ${u}, 아랫변의 길이가 ${l}인 사다리꼴의 두 옆변의 중점을 연결한 선분의 길이는?`, `${(u+l)/2}`); }
-  if (type === 8) { const dAngle = 30; return createProblem('2-2-1', diff, `직사각형의 대각선과 가로변이 이루는 각이 ${dAngle}^\\circ$일 때, 두 대각선 사이의 예각의 크기는?`, `$${2*dAngle}^\\circ$`); }
-  if (type === 9) return createProblem('2-2-1', diff, `마름모가 정사각형이 되기 위한 조건으로, 한 내각이 $90^\\circ$가 되거나 무엇의 길이가 같아야 하는가?`, `대각선`);
-  if (type === 10) return createProblem('2-2-1', diff, `직각삼각형의 빗변의 중점은 삼각형의 무엇과 일치하는가?`, `외심`);
-  if (type === 11) { const angle = 120; return createProblem('2-2-1', diff, `외심 $O$에 대해 $\\angle BOC = ${angle}^\\circ$일 때, 호 $BC$에 대한 원주각 $\\angle A$의 크기는?`, `$${angle/2}^\\circ$`); }
-  if (type === 12) return createProblem('2-2-1', diff, `평행사변형의 두 대각선은 서로를 어떻게 하는가?`, `이등분한다`);
-  if (type === 13) { const a = 3, b = 4, c = 5; return createProblem('2-2-1', diff, `직각삼각형의 세 변의 길이가 3, 4, 5이다. 이 삼각형의 내접원의 반지름 $r$은?`, `1`); }
-  if (type === 14) return createProblem('2-2-1', diff, `등변사다리꼴의 성질 중, 두 대각선의 길이는 어떠한가?`, `같다`);
-  return createProblem('2-2-1', diff, `어떤 사각형의 각 변의 중점을 연결하면 마름모가 되는 사각형은?`, `직사각형`);
+  if (type === 1) { const angle = randomInt(20, 50); return createProblem('2-2-1', diff, `직사각형 모양의 종이를 한 변의 중점을 지나도록 접었더니, 접힌 각이 ${angle}^\\circ$가 되었다. 엇각의 성질을 이용하면 겹친 부분의 삼각형은 어떤 삼각형인지 쓰시오.`, `이등변삼각형`); }
+  if (type === 2) { const r = randomInt(3, 8); return createProblem('2-2-1', diff, `$\\triangle ABC$의 외심 $O$에서 꼭짓점 $A$까지의 거리가 ${r}\\text{cm}$이다. 이때 꼭짓점 $B$까지의 거리를 구하시오.`, `${r}\\text{cm}`); }
+  if (type === 3) { const hyp = randomInt(6, 14) * 2; return createProblem('2-2-1', diff, `빗변의 길이가 ${hyp}\\text{cm}$인 직각삼각형의 외접원의 반지름의 길이를 구하시오.`, `${hyp/2}\\text{cm}`); }
+  if (type === 4) { const b = 30, c = 70; return createProblem('2-2-1', diff, `$\\triangle ABC$에서 $\\angle B=${b}^\\circ$, $\\angle C=${c}^\\circ$일 때, 내심 $I$에 대하여 $\\angle IAC$의 크기를 구하시오.`, `$${(180-b-c)/2}^\\circ$`); }
+  if (type === 5) { const a = 5, b = 8; return createProblem('2-2-1', diff, `이웃하는 두 변의 길이가 각각 ${a}\\text{cm}, ${b}\\text{cm}인 평행사변형의 둘레의 길이를 구하시오.`, `${2*(a+b)}\\text{cm}`); }
+  if (type === 6) { const d1 = 8, d2 = 6; return createProblem('2-2-1', diff, `두 대각선의 길이가 각각 ${d1}\\text{cm}, ${d2}\\text{cm}인 마름모의 넓이를 구하시오.`, `${d1*d2/2}\\text{cm}^2$`); }
+  if (type === 7) { const u = 6, l = 10; return createProblem('2-2-1', diff, `윗변의 길이가 ${u}\\text{cm}, 아랫변의 길이가 ${l}\\text{cm}인 사다리꼴에서 두 옆변의 중점을 이은 선분의 길이를 구하시오.`, `${(u+l)/2}\\text{cm}`); }
+  if (type === 8) { const dAngle = 30; return createProblem('2-2-1', diff, `직사각형의 대각선과 밑변이 이루는 각이 ${dAngle}^\\circ$일 때, 두 대각선이 이루는 예각의 크기를 구하시오.`, `$${2*dAngle}^\\circ$`); }
+  if (type === 9) return createProblem('2-2-1', diff, `마름모가 정사각형이 되기 위한 조건으로, 한 내각이 $90^\\circ$이거나 두 어떤 선분의 길이가 같아야 하는지 쓰시오.`, `두 대각선의 길이가 같다.`);
+  if (type === 10) return createProblem('2-2-1', diff, `직각삼각형에서 빗변의 중점은 삼각형의 어떤 점과 일치하는지 쓰시오.`, `외심`);
+  if (type === 11) { const angle = 120; return createProblem('2-2-1', diff, `원에서 중심각 $\\angle BOC = ${angle}^\\circ$일 때, 같은 호 $BC$에 대한 원주각 $\\angle A$의 크기를 구하시오.`, `$${angle/2}^\\circ$`); }
+  if (type === 12) return createProblem('2-2-1', diff, `평행사변형의 두 대각선은 서로 어떻게 되는지 서술하시오.`, `서로를 이등분한다.`);
+  if (type === 13) { const a = 3, b = 4, c = 5; return createProblem('2-2-1', diff, `세 변의 길이가 3, 4, 5인 직각삼각형의 내접원의 반지름 $r$의 길이를 구하시오.`, `1`); }
+  if (type === 14) return createProblem('2-2-1', diff, `등변사다리꼴에서 두 대각선의 길이는 서로 어떤 관계에 있는지 쓰시오.`, `서로 같다.`);
+  if (type === 15) return createProblem('2-2-1', diff, `어떤 사각형의 네 변의 중점을 차례로 이으면 항상 평행사변형이 된다. 이때 원래 사각형이 직사각형이면 어떤 사각형이 되는지 쓰시오.`, `마름모`);
+  if (type === 16) return createProblem('2-2-1', diff, `정다각형의 한 내각의 크기가 $135^\\circ$일 때, 이 다각형이 몇각형인지 구하시오.`, `8각형`);
+  if (type === 17) return createProblem('2-2-1', diff, `한 평행사변형의 한 각이 $70^\\circ$일 때, 나머지 세 각의 크기를 모두 구하시오.`, `70^\\circ, 110^\\circ, 110^\\circ`);
+  if (type === 18) return createProblem('2-2-1', diff, `정오각형의 한 내각과 한 외각의 크기를 각각 구하시오.`, `내각 108^\\circ, 외각 72^\\circ`);
+  if (type === 19) return createProblem('2-2-1', diff, `원에서 두 현이 서로 수직으로 만날 때, 그 교점에서 각 현의 네 조각 중 서로 마주보는 조각들의 길이의 곱이 같은 이유를 간단히 설명하시오.`, `닮음에 의해 생기는 곱의 관계`);
+  if (type === 20) return createProblem('2-2-1', diff, `직사각형의 한 변의 길이가 5cm이고, 대각선의 길이가 13cm일 때 다른 변의 길이를 구하시오.`, `12cm`);
+  if (type === 21) return createProblem('2-2-1', diff, `사다리꼴의 두 밑변의 길이가 6cm와 10cm이고, 높이가 4cm일 때, 넓이를 구하시오.`, `32cm^2`);
+  if (type === 22) return createProblem('2-2-1', diff, `삼각형 $ABC$에서 $AB=AC$인 이등변삼각형이고, $\\angle B=40^\\circ$일 때, 외각의 성질을 이용하여 $\\angle ACD$ (외각)의 크기를 구하시오.`, `100^\\circ`);
+  return createProblem('2-2-1', diff, `평행사변형과 사다리꼴의 공통된 성질을 한 가지 쓰시오.`, `한 쌍 이상의 대변이 서로 평행이다.`);
 };
 
 const shapeHigh = (): Problem => {
   const diff = 'High';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type === 1) return createProblem('2-2-1', diff, `$\\triangle ABC$의 내심 $I$를 지나고 $BC$에 평행한 직선이 $AB, AC$와 만나는 점을 $D, E$라 한다. $DB=6, EC=5$일 때, 선분 $DE$의 길이는?`, `11`);
-  if (type === 2) { const a = 44; return createProblem('2-2-1', diff, `$\\triangle ABC$에서 $\\angle A = ${a}^\\circ$이다. 외심 $O$와 내심 $I$에 대하여 $\\angle BOC - \\angle BIC$의 값은?`, `$${2*a - (90+a/2)}^\\circ$`); }
-  if (type === 3) return createProblem('2-2-1', diff, `등변사다리꼴 $ABCD$에서 $AD || BC$이고 $AB=AD=6, \\angle B=60^\\circ$이다. 이 사다리꼴의 둘레의 길이는?`, `30 (아랫변=12)`);
-  if (type === 4) return createProblem('2-2-1', diff, `가로가 8, 세로가 6인 직사각형 $ABCD$의 대각선 $BD$를 접는 선으로 하여 접었다. 겹치는 부분($\\triangle PBD$)의 넓이는?`, `$\\frac{75}{4}$`); 
-  if (type === 5) return createProblem('2-2-1', diff, `정사각형 $ABCD$ 내부에 정삼각형 $EBC$가 있다. $\\angle AED$의 크기는?`, `$150^\\circ$`);
-  if (type === 6) return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $\\angle A$의 이등분선이 $BC$와 만나는 점을 $E$라 하자. $AB=5, AD=8$일 때 $EC$의 길이는?`, `3`);
-  if (type === 7) return createProblem('2-2-1', diff, `일반적인 사각형의 각 변의 중점을 연결하여 만든 사각형은 어떤 사각형인가?`, `평행사변형`);
-  if (type === 8) return createProblem('2-2-1', diff, `직사각형 내부의 임의의 점 $P$에 대하여 $PA^2 + PC^2 = 20$일 때, $PB^2 + PD^2$의 값은?`, `20`);
-  if (type === 9) return createProblem('2-2-1', diff, `삼각형 $ABC$의 무게중심 $G$에 대하여, $\\triangle GAB$의 넓이가 10일 때, $\\triangle ABC$의 전체 넓이는?`, `30`);
-  if (type === 10) return createProblem('2-2-1', diff, `직각삼각형의 내접원 반지름이 2이고, 둘레의 길이가 24일 때, 이 삼각형의 넓이는?`, `24`);
-  if (type === 11) return createProblem('2-2-1', diff, `정사각형 $ABCD$의 대각선 $AC$ 위의 점 $P$에 대하여 $\\angle ABP=25^\\circ$일 때, $\\angle ADP$의 크기는?`, `$25^\\circ$`);
-  if (type === 12) return createProblem('2-2-1', diff, `삼각형의 내심과 외심이 일치하는 삼각형은 어떤 삼각형인가?`, `정삼각형`);
-  if (type === 13) return createProblem('2-2-1', diff, `평행사변형 $ABCD$ 내부의 점 $P$에 대하여 $\\triangle PAB + \\triangle PCD = 20$일 때, 평행사변형 전체의 넓이는?`, `40`);
-  if (type === 14) return createProblem('2-2-1', diff, `직각삼각형 $ABC$의 외심 $O$에 대하여 $OA+OB+OC=30$일 때, 빗변의 길이는?`, `20`);
-  return createProblem('2-2-1', diff, `내각의 크기의 합이 $1800^\\circ$인 다각형은 몇 각형인가?`, `12각형`);
+  if (type === 1) return createProblem('2-2-1', diff, `$\\triangle ABC$의 내심 $I$를 지나고 $BC$에 평행한 직선이 $AB, AC$와 만나는 점을 각각 $D, E$라 한다. $DB=6$, $EC=5$일 때, 선분 $DE$의 길이를 구하시오.`, `11`);
+  if (type === 2) { const a = 44; return createProblem('2-2-1', diff, `$\\triangle ABC$에서 $\\angle A = ${a}^\\circ$일 때, 외심 $O$와 내심 $I$에 대하여 $\\angle BOC - \\angle BIC$의 값을 구하시오.`, `$${2*a - (90+a/2)}^\\circ$`); }
+  if (type === 3) return createProblem('2-2-1', diff, `등변사다리꼴 $ABCD$에서 $AD \\parallel BC$이고 $AB=AD=6$, $\\angle B=60^\\circ$일 때, 이 사다리꼴의 둘레의 길이를 구하시오.`, `30`);
+  if (type === 4) return createProblem('2-2-1', diff, `가로 8, 세로 6인 직사각형 $ABCD$에서 대각선 $BD$를 접는 선으로 하여 종이를 접었다. 겹쳐지는 삼각형 $\\triangle PBD$의 넓이를 구하시오.`, `$\\dfrac{75}{4}$`); 
+  if (type === 5) return createProblem('2-2-1', diff, `정사각형 $ABCD$ 안에 정삼각형 $EBC$가 그려져 있다. 이때 $\\angle AED$의 크기를 구하시오.`, `$150^\\circ$`);
+  if (type === 6) return createProblem('2-2-1', diff, `평행사변형 $ABCD$에서 $\\angle A$의 이등분선이 $BC$와 만나는 점을 $E$라 하자. $AB=5$, $AD=8$일 때, $EC$의 길이를 구하시오.`, `3`);
+  if (type === 7) return createProblem('2-2-1', diff, `임의의 사각형의 각 변의 중점을 연결하여 만든 사각형은 어떤 종류의 사각형이 되는가?`, `평행사변형`);
+  if (type === 8) return createProblem('2-2-1', diff, `직사각형 $ABCD$의 내부에 임의의 점 $P$가 있을 때, $PA^2 + PC^2 = 20$이면 $PB^2 + PD^2$의 값을 구하시오.`, `20`);
+  if (type === 9) return createProblem('2-2-1', diff, `삼각형 $ABC$의 무게중심을 $G$라 할 때, $\\triangle GAB$의 넓이가 10이다. 이때 삼각형 $ABC$의 넓이를 구하시오.`, `30`);
+  if (type === 10) return createProblem('2-2-1', diff, `직각삼각형의 내접원의 반지름이 2이고, 둘레의 길이가 24일 때, 이 직각삼각형의 넓이를 구하시오.`, `24`);
+  if (type === 11) return createProblem('2-2-1', diff, `정사각형 $ABCD$의 대각선 $AC$ 위의 점 $P$에 대하여 $\\angle ABP=25^\\circ$일 때, $\\angle ADP$의 크기를 구하시오.`, `$25^\\circ$`);
+  if (type === 12) return createProblem('2-2-1', diff, `삼각형의 내심과 외심이 일치하는 삼각형은 어떤 삼각형인지 쓰시오.`, `정삼각형`);
+  if (type === 13) return createProblem('2-2-1', diff, `평행사변형 $ABCD$ 내부의 점 $P$에 대하여 $\\triangle PAB$와 $\\triangle PCD$의 넓이의 합이 20일 때, 평행사변형 $ABCD$의 넓이를 구하시오.`, `40`);
+  if (type === 14) return createProblem('2-2-1', diff, `직각삼각형 $ABC$의 외심을 $O$라 할 때, $OA+OB+OC=30$이면 빗변 $BC$의 길이를 구하시오.`, `20`);
+  if (type === 15) return createProblem('2-2-1', diff, `내각의 크기의 합이 $1800^\\circ$인 볼록다각형은 몇각형인지 구하시오.`, `12각형`);
+  if (type === 16) return createProblem('2-2-1', diff, `마름모의 한 대각선의 길이가 10이고 다른 대각선의 길이가 24일 때, 마름모의 넓이를 구하시오.`, `120`);
+  if (type === 17) return createProblem('2-2-1', diff, `정삼각형의 한 변의 길이가 4일 때, 외접원의 반지름의 길이를 구하시오.`, `\\dfrac{4}{\\sqrt{3}}`);
+  if (type === 18) return createProblem('2-2-1', diff, `사다리꼴의 윗변, 아랫변, 높이가 각각 6cm, 14cm, 5cm일 때, 중선의 길이와 넓이를 각각 구하시오.`, `중선 10cm, 넓이 50cm^2`);
+  if (type === 19) return createProblem('2-2-1', diff, `직각삼각형 $ABC$에서 빗변 $BC$의 길이가 10이고, 빗변에 내린 높이의 길이가 6일 때, 이 삼각형의 넓이를 구하시오.`, `30`);
+  if (type === 20) return createProblem('2-2-1', diff, `정사각형 $ABCD$의 한 변의 길이가 2일 때, 네 꼭짓점을 모두 지나는 원의 넓이를 구하시오.`, `2\\pi`);
+  if (type === 21) return createProblem('2-2-1', diff, `직각삼각형의 세 변의 길이가 5, 12, 13일 때, 외접원의 넓이를 구하시오.`, `\\dfrac{169\\pi}{4}`);
+  if (type === 22) return createProblem('2-2-1', diff, `정오각형의 한 변의 길이가 2일 때, 대각선의 길이를 황금비를 이용하여 나타내시오.`, `$2\\varphi$`);
+  return createProblem('2-2-1', diff, `정사각형의 각 변의 중점을 차례로 이으면 또 하나의 정사각형이 생긴다. 원래 정사각형의 한 변의 길이가 4일 때, 안쪽 정사각형의 넓이를 구하시오.`, `8`);
 };
 
 // ==========================================
@@ -90,65 +114,89 @@ const shapeHigh = (): Problem => {
 
 const simLow = (): Problem => {
   const diff = 'Low';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
   
-  if (type===1) return createProblem('2-2-2', diff, `다음 중 삼각형의 닮음 조건이 아닌 것은? (SAS, SSS, AA, ASA)`, `ASA`);
-  if (type===2) { const s = randomInt(2,5); return createProblem('2-2-2', diff, `두 닮은 도형의 닮음비가 $1:${s}$일 때, 넓이의 비는?`, `$1:${s*s}$`); }
-  if (type===3) { const s = randomInt(2,4); return createProblem('2-2-2', diff, `두 입체도형의 닮음비가 $1:${s}$일 때, 부피의 비는?`, `$1:${s*s*s}$`); }
-  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC \\sim \\triangle DEF$이고 $AB=4, DE=8$이다. 두 삼각형의 닮음비는?`, `1:2`);
-  if (type===5) return createProblem('2-2-2', diff, `축척이 1:50000인 지도에서 거리가 2cm인 두 지점 사이의 실제 거리는 몇 km인가?`, `1km`);
-  if (type===6) return createProblem('2-2-2', diff, `삼각형의 무게중심 $G$는 중선을 꼭짓점으로부터 몇 대 몇으로 나누는가?`, `2:1`);
-  if (type===7) return createProblem('2-2-2', diff, `삼각형의 두 변의 중점을 연결한 선분은 나머지 한 변과 평행하고, 그 길이는 나머지 변의 얼마인가?`, `1/2`);
-  if (type===8) return createProblem('2-2-2', diff, `서로 닮은 두 평면도형에서 대응하는 각의 크기는 어떠한가?`, `같다`);
-  if (type===9) return createProblem('2-2-2', diff, `직각삼각형의 직각인 꼭짓점에서 빗변에 수선을 내렸을 때, 생기는 서로 닮은 삼각형은 모두 몇 개인가?`, `3개`);
-  if (type===10) return createProblem('2-2-2', diff, `항상 닮음인 도형을 고르시오. (정삼각형, 이등변삼각형, 직사각형)`, `정삼각형`);
-  if (type===11) return createProblem('2-2-2', diff, `닮음비가 $2:3$인 두 원의 둘레의 길이의 비는?`, `2:3`);
-  if (type===12) return createProblem('2-2-2', diff, `정육면체의 한 모서리의 길이가 2배가 되면 부피는 몇 배가 되는가?`, `8배`);
-  if (type===13) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $AB, AC$의 중점을 각각 $D, E$라 하자. $BC=12$일 때 $DE$의 길이는?`, `6`);
-  if (type===14) return createProblem('2-2-2', diff, `모든 원은 서로 닮음인가? (O/X)`, `O`);
-  return createProblem('2-2-2', diff, `두 구의 겉넓이의 비가 $4:9$이다. 반지름의 길이의 비는?`, `$2:3$`);
+  if (type===1) return createProblem('2-2-2', diff, `다음 중 삼각형의 닮음 조건이 아닌 것을 고르시오. (SAS, SSS, AA, ASA)`, `ASA`);
+  if (type===2) { const s = randomInt(2,5); return createProblem('2-2-2', diff, `두 닮은 평면도형의 닮음비가 $1:${s}$일 때, 넓이의 비를 구하시오.`, `$1:${s*s}$`); }
+  if (type===3) { const s = randomInt(2,4); return createProblem('2-2-2', diff, `두 닮은 입체도형의 닮음비가 $1:${s}$일 때, 부피의 비를 구하시오.`, `$1:${s*s*s}$`); }
+  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC \\sim \\triangle DEF$이고 $AB=4$, $DE=8$일 때, 두 삼각형의 닮음비를 구하시오.`, `1:2`);
+  if (type===5) return createProblem('2-2-2', diff, `축척이 1:50000인 지도에서 거리가 2cm인 두 지점 사이의 실제 거리를 km 단위로 구하시오.`, `1km`);
+  if (type===6) return createProblem('2-2-2', diff, `삼각형의 무게중심 $G$는 중선을 꼭짓점으로부터 몇 대 몇으로 나누는지 쓰시오.`, `2:1`);
+  if (type===7) return createProblem('2-2-2', diff, `삼각형의 두 변의 중점을 연결한 선분은 나머지 한 변과 평행하고, 그 길이는 나머지 변의 몇 분의 몇인지 쓰시오.`, `1/2`);
+  if (type===8) return createProblem('2-2-2', diff, `서로 닮은 두 평면도형에서 대응하는 각의 크기는 어떻게 되는지 쓰시오.`, `서로 같다.`);
+  if (type===9) return createProblem('2-2-2', diff, `직각삼각형의 직각인 꼭짓점에서 빗변에 수선을 내렸을 때, 서로 닮은 삼각형은 모두 몇 개인가?`, `3개`);
+  if (type===10) return createProblem('2-2-2', diff, `항상 서로 닮은 도형을 고르시오. (정삼각형, 이등변삼각형, 직사각형)`, `정삼각형`);
+  if (type===11) return createProblem('2-2-2', diff, `닮음비가 $2:3$인 두 원의 둘레의 길이의 비를 구하시오.`, `2:3`);
+  if (type===12) return createProblem('2-2-2', diff, `정육면체의 한 모서리의 길이를 2배로 하면, 부피는 몇 배가 되는지 구하시오.`, `8배`);
+  if (type===13) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $AB$와 $AC$의 중점을 각각 $D, E$라 할 때, $BC=12$이면 $DE$의 길이를 구하시오.`, `6`);
+  if (type===14) return createProblem('2-2-2', diff, `모든 원은 서로 닮음인지 O, X로 답하시오.`, `O`);
+  if (type===15) return createProblem('2-2-2', diff, `두 구의 겉넓이의 비가 $4:9$일 때, 반지름의 길이의 비를 구하시오.`, `$2:3$`);
+  if (type===16) return createProblem('2-2-2', diff, `정사각형 두 개의 한 변의 길이의 비가 $1:3$일 때, 넓이의 비를 구하시오.`, `1:9`);
+  if (type===17) return createProblem('2-2-2', diff, `서로 닮은 두 직사각형의 한 변의 길이의 비가 $2:5$일 때, 둘레의 길이의 비를 구하시오.`, `2:5`);
+  if (type===18) return createProblem('2-2-2', diff, `정육각형과 정삼각형은 항상 서로 닮음인지 O, X로 답하고, 이유를 간단히 쓰시오.`, `X, 변의 개수가 다르다.`);
+  if (type===19) return createProblem('2-2-2', diff, `한 변의 길이가 3인 정사각형과 한 변의 길이가 6인 정사각형의 넓이의 비를 구하시오.`, `1:4`);
+  if (type===20) return createProblem('2-2-2', diff, `삼각형에서 한 변의 길이를 2배로, 높이를 그대로 두면 넓이는 몇 배가 되는지 쓰시오.`, `2배`);
+  if (type===21) return createProblem('2-2-2', diff, `두 평면도형이 서로 닮음일 때, 대응하는 선분의 길이의 비와 둘레의 비는 어떤 관계인지 말로 설명하시오.`, `둘레의 비는 선분의 비와 같다.`);
+  if (type===22) return createProblem('2-2-2', diff, `두 원기둥의 닮음비가 $1:2$일 때, 부피의 비를 구하시오.`, `1:8`);
+  return createProblem('2-2-2', diff, `닮음인 두 삼각형에서 대응하는 높이의 비는 무엇의 비와 같은지 쓰시오.`, `대응하는 변의 길이의 비`);
 };
 
 const simMid = (): Problem => {
   const diff = 'Mid';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
   
-  if (type===1) return createProblem('2-2-2', diff, `높이가 1m인 막대의 그림자가 1.5m일 때, 같은 시각 그림자의 길이가 6m인 나무의 높이는?`, `4m`);
-  if (type===2) { const a = 10, b = 15; const h = (a*b)/(a+b); return createProblem('2-2-2', diff, `높이가 각각 ${a}m, ${b}m인 두 전봇대 사이에서, 밑부분과 꼭대기를 교차하여 연결한 줄이 만나는 지점의 높이는?`, `${h}m`); }
-  if (type===3) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $\\angle A$의 이등분선이 $BC$와 만나는 점을 $D$라 하자. $AB=6, AC=4, BC=5$일 때 $BD$의 길이는?`, `3`);
-  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC$의 넓이가 36이다. 무게중심 $G$에 대하여 $\\triangle GBC$의 넓이는?`, `12`);
-  if (type===5) return createProblem('2-2-2', diff, `$\\triangle ABC \\sim \\triangle DEF$이고 닮음비가 $2:3$이다. $\\triangle ABC$의 둘레가 10일 때 $\\triangle DEF$의 둘레는?`, `15`);
-  if (type===6) { const u = 8, d = 14; return createProblem('2-2-2', diff, `사다리꼴의 윗변이 ${u}, 아랫변이 ${d}일 때, 두 변의 중점을 연결한 선분의 길이는?`, `11`); }
-  if (type===7) { return createProblem('2-2-2', diff, `직각삼각형 $ABC(\\angle A=90^\\circ)$에서 수선 $AH$를 내렸다. $BH=4, HC=9$일 때 $AH^2$의 값은?`, `36`); }
-  if (type===8) return createProblem('2-2-2', diff, `반지름의 길이가 3배인 큰 쇠구슬을 녹여 작은 쇠구슬을 만들 때, 최대 몇 개를 만들 수 있는가?`, `27개`);
-  if (type===9) return createProblem('2-2-2', diff, `원뿔을 높이의 $1/2$ 지점에서 밑면에 평행하게 잘랐다. 위쪽 원뿔과 아래쪽 원뿔대의 부피의 비는?`, `1:7`);
-  if (type===10) return createProblem('2-2-2', diff, `평행사변형 $ABCD$에서 대각선 $AC$는 다른 대각선 $BD$를 이등분한다. 이때 생기는 삼각형들의 무게중심은 대각선을 삼등분하는가? (O/X)`, `O`);
-  if (type===11) return createProblem('2-2-2', diff, `삼각형의 외각의 이등분선 정리: $AB:AC = BD:CD$ (O/X)`, `O`);
-  if (type===12) return createProblem('2-2-2', diff, `A4 용지와 A3 용지는 서로 닮음이다. 닮음비는? (긴 변 기준)`, `$1:\\sqrt{2}$`);
-  if (type===13) return createProblem('2-2-2', diff, `원뿔 모양 그릇에 높이의 $2/3$만큼 물을 채웠다. 물의 부피는 그릇 전체 부피의 몇 분의 몇인가?`, `8/27`);
-  if (type===14) return createProblem('2-2-2', diff, `직각삼각형의 닮음 공식 중 $c^2 = a \\times x$ (빗변의 일부) 꼴의 공식이 성립하는가?`, `O`);
-  return createProblem('2-2-2', diff, `무게중심 $G$를 지나는 중선의 길이는 꼭짓점부터 무게중심까지 거리의 몇 배인가?`, `1.5배`);
+  if (type===1) return createProblem('2-2-2', diff, `높이가 1m인 막대의 그림자가 1.5m일 때, 같은 시각에 그림자의 길이가 6m인 나무의 높이를 구하시오.`, `4m`);
+  if (type===2) { const a = 10, b = 15; const h = (a*b)/(a+b); return createProblem('2-2-2', diff, `높이가 각각 ${a}m, ${b}m인 두 전봇대 사이에서, 밑부분과 꼭대기를 교차하여 연결한 줄이 만나는 지점의 높이를 구하시오.`, `${h}m`); }
+  if (type===3) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $\\angle A$의 이등분선이 $BC$와 만나는 점을 $D$라 하자. $AB=6, AC=4, BC=5$일 때, $BD$의 길이를 구하시오.`, `3`);
+  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC$의 넓이가 36일 때, 무게중심 $G$에 대하여 $\\triangle GBC$의 넓이를 구하시오.`, `12`);
+  if (type===5) return createProblem('2-2-2', diff, `$\\triangle ABC \\sim \\triangle DEF$이고 닮음비가 $2:3$이다. $\\triangle ABC$의 둘레가 10일 때, $\\triangle DEF$의 둘레를 구하시오.`, `15`);
+  if (type===6) { const u = 8, d = 14; return createProblem('2-2-2', diff, `사다리꼴의 윗변이 ${u}, 아랫변이 ${d}$일 때, 두 변의 중점을 연결한 선분의 길이를 구하시오.`, `11`); }
+  if (type===7) { return createProblem('2-2-2', diff, `직각삼각형 $ABC(\\angle A=90^\\circ)$에서 빗변 $BC$ 위에 수선 $AH$를 내렸다. $BH=4, HC=9$일 때, $AH^2$의 값을 구하시오.`, `36`); }
+  if (type===8) return createProblem('2-2-2', diff, `반지름의 길이가 3배인 큰 쇠구슬을 녹여 같은 모양의 작은 쇠구슬을 만들 때, 최대 몇 개를 만들 수 있는지 구하시오.`, `27개`);
+  if (type===9) return createProblem('2-2-2', diff, `원뿔을 높이의 $1/2$ 지점에서 밑면에 평행하게 잘랐다. 위쪽 작은 원뿔과 아래쪽 원뿔대의 부피의 비를 구하시오.`, `1:7`);
+  if (type===10) return createProblem('2-2-2', diff, `평행사변형 $ABCD$에서 대각선 $AC$와 $BD$는 서로를 이등분한다. 이때 생기는 네 개의 삼각형의 무게중심을 이으면 어떤 도형이 되는지 쓰고, 그 이유를 간단히 설명하시오.`, `평행사변형`);
+  if (type===11) return createProblem('2-2-2', diff, `삼각형의 외각의 이등분선 정리, $AB:AC = BD:CD$가 성립하는지 O, X로 답하시오.`, `O`);
+  if (type===12) return createProblem('2-2-2', diff, `A4 용지와 A3 용지는 서로 닮음이다. 긴 변을 기준으로 한 닮음비를 구하시오.`, `$1:\\sqrt{2}$`);
+  if (type===13) return createProblem('2-2-2', diff, `원뿔 모양 그릇에 높이의 $\\dfrac{2}{3}$까지 물을 채웠을 때, 물의 부피는 그릇 전체 부피의 몇 분의 몇인지 구하시오.`, `8/27`);
+  if (type===14) return createProblem('2-2-2', diff, `직각삼각형의 닮음 공식을 이용할 때, 빗변 위의 수선의 발을 $H$라고 하면 $c^2 = a \\times x$와 같은 꼴의 공식이 성립하는지 O, X로 답하시오.`, `O`);
+  if (type===15) return createProblem('2-2-2', diff, `삼각형 $ABC$의 무게중심 $G$를 지나는 중선의 전체 길이를 $m$이라고 할 때, 꼭짓점에서 $G$까지의 거리는 얼마인지 $m$을 사용하여 나타내시오.`, `$\\dfrac{2}{3}m$`);
+  if (type===16) return createProblem('2-2-2', diff, `두 직육면체의 닮음비가 $1:2$일 때, 겉넓이와 부피의 비를 각각 구하시오.`, `겉넓이 1:4, 부피 1:8`);
+  if (type===17) return createProblem('2-2-2', diff, `정삼각형의 한 변의 길이가 6일 때, 이 삼각형과 닮음비가 $1:2$인 정삼각형의 넓이의 비를 구하시오.`, `1:4`);
+  if (type===18) return createProblem('2-2-2', diff, `밑면의 반지름과 높이가 각각 2배가 된 원기둥의 부피는 원래 원기둥 부피의 몇 배가 되는지 구하시오.`, `8배`);
+  if (type===19) return createProblem('2-2-2', diff, `두 원의 반지름의 길이의 비가 $3:5$일 때, 둘레의 길이와 넓이의 비를 각각 구하시오.`, `둘레 3:5, 넓이 9:25`);
+  if (type===20) return createProblem('2-2-2', diff, `밑변이 10이고 높이가 6인 삼각형과 밑변이 5이고 높이가 3인 삼각형이 서로 닮음인지 넓이를 통해 판단하시오.`, `닮음이다 (배율 2배)`);
+  if (type===21) return createProblem('2-2-2', diff, `사다리꼴에서 윗변, 아랫변, 높이가 각각 4, 10, 3일 때, 이와 닮음인 사다리꼴의 윗변이 6이라면 아랫변과 높이는 얼마인지 구하시오.`, `아랫변 15, 높이 4.5`);
+  if (type===22) return createProblem('2-2-2', diff, `정육면체의 한 모서리의 길이를 3배로 하면, 겉넓이와 부피는 각각 몇 배가 되는지 구하시오.`, `겉넓이 9배, 부피 27배`);
+  return createProblem('2-2-2', diff, `무게중심 $G$를 지나는 중선의 길이는 꼭짓점부터 무게중심까지 거리의 몇 배인지 쓰시오.`, `1.5배`);
 };
 
 const simHigh = (): Problem => {
   const diff = 'High';
-  const type = randomInt(1, 15);
+  const type = randomInt(1, 23);
 
-  if (type===1) return createProblem('2-2-2', diff, `평행사변형 $ABCD$의 넓이가 60이다. $BC$의 중점을 $M$, $CD$의 중점을 $N$이라 할 때, $\\triangle AMN$의 넓이는?`, `22.5`);
-  if (type===2) return createProblem('2-2-2', diff, `직각삼각형 $ABC$의 무게중심을 $G$라 하자. 빗변 $BC=12$일 때, 꼭짓점 $A$에서 $G$까지의 거리 $AG$는?`, `4`);
-  if (type===3) return createProblem('2-2-2', diff, `사다리꼴 $ABCD$ ($AD||BC$)에서 $AD=4, BC=6$이다. 두 대각선의 교점 $O$를 지나고 밑변에 평행한 선분이 옆변과 만나는 점을 $P, Q$라 할 때 $PQ$의 길이는?`, `4.8`);
-  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $\\angle A$의 내각의 이등분선이 $BC$와 만나는 점 $D$. $AB=6, AC=4$이다. $\\triangle ABD$의 넓이가 9일 때 $\\triangle ADC$의 넓이는?`, `6`);
-  if (type===5) return createProblem('2-2-2', diff, `축척 1:1000인 지도에서 넓이가 $20cm^2$인 땅의 실제 넓이는 몇 $m^2$인가?`, `2000m^2`);
-  if (type===6) return createProblem('2-2-2', diff, `빈 물통에 물을 채우는데 높이의 $1/2$까지 채우는 데 10분이 걸렸다. 가득 채울 때까지 더 걸리는 시간은?`, `70분`);
-  if (type===7) return createProblem('2-2-2', diff, `직각삼각형 $ABC$ ($AB=3, BC=4, \angle B=90$) 내부에 정사각형 $DBEF$가 내접한다 ($B$는 공통). 정사각형의 한 변의 길이는?`, `12/7`);
-  if (type===8) return createProblem('2-2-2', diff, `키 1.6m인 사람이 가로등 밑에서 초속 1m로 걸어간다. 가로등 높이가 4.8m일 때, 그림자 끝이 움직이는 속력은?`, `1.5m/s`);
-  if (type===9) return createProblem('2-2-2', diff, `정사면체를 각 모서리의 중점을 지나는 평면으로 잘라내어 만든 입체도형(팔면체)의 부피는 처음 정사면체 부피의 몇 분의 몇인가?`, `1/2`);
-  if (type===10) return createProblem('2-2-2', diff, `$\\triangle ABC$의 무게중심 $G$를 지나고변 $BC$에 평행한 직선이 $AB, AC$와 만나는 점을 $D, E$라 하자. $\\triangle ADE$의 넓이가 4일 때 $\\triangle ABC$의 넓이는?`, `9`);
-  if (type===11) return createProblem('2-2-2', diff, `정삼각형 $ABC$의 변 $BC$ 위에 $BD:DC=1:2$인 점 $D$가 있다. $\\angle ADE=60^\\circ$가 되도록 변 $AC$ 위에 점 $E$를 잡을 때, $AE:EC$의 비는?`, `4:5`); 
-  if (type===12) return createProblem('2-2-2', diff, `사다리꼴의 두 대각선의 교점을 지나며 밑변에 평행한 직선의 길이 공식은? ($a$는 윗변, $b$는 아랫변)`, `$\\frac{2ab}{a+b}$`);
-  if (type===13) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 무게중심 $G$와 외심 $O$가 일치한다면 이 삼각형은?`, `정삼각형`);
-  if (type===14) return createProblem('2-2-2', diff, `닮음비가 $m:n$인 두 원기둥의 겉넓이의 비는?`, `$m^2 : n^2$`);
-  return createProblem('2-2-2', diff, `원뿔을 밑면에 평행하게 3등분(높이 기준) 했을 때, 가장 아래쪽 입체도형(원뿔대)의 부피는 전체 원뿔 부피의 몇 분의 몇인가?`, `19/27`);
+  if (type===1) return createProblem('2-2-2', diff, `평행사변형 $ABCD$의 넓이가 60이다. $BC$의 중점을 $M$, $CD$의 중점을 $N$이라 할 때, 삼각형 $AMN$의 넓이를 구하시오.`, `22.5`);
+  if (type===2) return createProblem('2-2-2', diff, `직각삼각형 $ABC$의 무게중심을 $G$라 하자. 빗변 $BC=12$일 때, 꼭짓점 $A$에서 무게중심 $G$까지의 거리 $AG$를 구하시오.`, `4`);
+  if (type===3) return createProblem('2-2-2', diff, `사다리꼴 $ABCD$ ($AD\\parallel BC$)에서 $AD=4$, $BC=6$이다. 두 대각선의 교점 $O$를 지나고 밑변에 평행한 선분이 옆변과 만나는 점을 $P, Q$라 할 때, $PQ$의 길이를 구하시오.`, `4.8`);
+  if (type===4) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 $\\angle A$의 내각의 이등분선이 $BC$와 만나는 점을 $D$라 하자. $AB=6$, $AC=4$이고 $\\triangle ABD$의 넓이가 9일 때, $\\triangle ADC$의 넓이를 구하시오.`, `6`);
+  if (type===5) return createProblem('2-2-2', diff, `축척이 1:1000인 지도에서 넓이가 $20\\text{cm}^2$인 땅의 실제 넓이를 $\\text{m}^2$ 단위로 구하시오.`, `2000m^2`);
+  if (type===6) return createProblem('2-2-2', diff, `빈 원뿔 모양 수조에 물을 채우는데 높이의 $1/2$까지 채우는 데 10분이 걸렸다. 같은 속도로 물을 채울 때 가득 채우기까지 더 걸리는 시간을 구하시오.`, `70분`);
+  if (type===7) return createProblem('2-2-2', diff, `직각삼각형 $ABC$ ($AB=3, BC=4, \\angle B=90^\\circ$) 내부에 정사각형 $DBEF$가 내접되어 있다. (점 $B$는 삼각형과 정사각형의 공통 꼭짓점) 이 정사각형의 한 변의 길이를 구하시오.`, `12/7`);
+  if (type===8) return createProblem('2-2-2', diff, `키가 1.6m인 사람이 가로등 밑에서 초속 1m로 걷고 있다. 가로등의 높이가 4.8m일 때, 그림자 끝이 움직이는 속력을 구하시오.`, `1.5m/s`);
+  if (type===9) return createProblem('2-2-2', diff, `정사면체를 각 모서리의 중점을 지나는 평면으로 잘라내어 생기는 팔면체의 부피는 처음 정사면체 부피의 몇 분의 몇인지 구하시오.`, `1/2`);
+  if (type===10) return createProblem('2-2-2', diff, `$\\triangle ABC$의 무게중심 $G$를 지나고 변 $BC$에 평행한 직선이 $AB$, $AC$와 만나는 점을 각각 $D$, $E$라 할 때, $\\triangle ADE$의 넓이가 4이면 $\\triangle ABC$의 넓이를 구하시오.`, `9`);
+  if (type===11) return createProblem('2-2-2', diff, `정삼각형 $ABC$의 변 $BC$ 위에 $BD:DC=1:2$인 점 $D$가 있다. $\\angle ADE=60^\\circ$가 되도록 변 $AC$ 위에 점 $E$를 잡을 때, $AE:EC$의 비를 구하시오.`, `4:5`); 
+  if (type===12) return createProblem('2-2-2', diff, `사다리꼴의 두 대각선의 교점을 지나며 밑변에 평행한 선분의 길이는 윗변과 아랫변의 길이를 각각 $a, b$라 할 때 $\\dfrac{2ab}{a+b}$이다. 이 공식을 이용하여 $a=4$, $b=10$일 때의 선분의 길이를 구하시오.`, `6.4`);
+  if (type===13) return createProblem('2-2-2', diff, `$\\triangle ABC$에서 무게중심 $G$와 외심 $O$가 일치한다면 이 삼각형이 정삼각형임을 설명하시오.`, `세 변의 길이가 모두 같기 때문이다.`);
+  if (type===14) return createProblem('2-2-2', diff, `닮음비가 $m:n$인 두 원기둥의 겉넓이의 비가 $m^2:n^2$이 됨을 닮음의 성질을 이용하여 설명하시오.`, `반지름의 비가 m:n이므로 원의 넓이 비가 m^2:n^2`);
+  if (type===15) return createProblem('2-2-2', diff, `원뿔을 밑면에 평행한 두 평면으로 높이를 세 등분하도록 잘랐을 때, 가장 아래쪽 원뿔대의 부피가 전체 원뿔 부피의 몇 분의 몇인지 구하시오.`, `19/27`);
+  if (type===16) return createProblem('2-2-2', diff, `정사각형의 한 변의 길이가 4에서 6으로 커질 때, 정사각형의 넓이는 몇 배가 되는지, 그리고 이 변화가 닮음비와 어떤 관계가 있는지 설명하시오.`, `넓이 2.25배`);
+  if (type===17) return createProblem('2-2-2', diff, `어떤 원뿔의 부피가 54이고, 닮음비가 1:3인 더 큰 원뿔을 만들었다. 큰 원뿔의 부피를 구하시오.`, `1458`);
+  if (type===18) return createProblem('2-2-2', diff, `밑변의 길이가 각각 6, 9이고 높이가 같은 두 삼각형이 있다. 이 두 삼각형이 서로 닮음이 되기 위한 조건을 말하고, 넓이의 비를 구하시오.`, `둘 다 직각삼각형 등; 넓이비 2:3`);
+  if (type===19) return createProblem('2-2-2', diff, `두 계단 모형이 닮음일 때, 가로 길이의 비가 2:5라면 계단 수와 계단의 높이는 각각 어떤 비가 되는지 설명하시오.`, `계단 수와 높이도 2:5`);
+  if (type===20) return createProblem('2-2-2', diff, `직각삼각형에서 빗변에 내린 높이를 이용하여 세 개의 닮은 삼각형이 생길 때, 이들 삼각형의 넓이의 비를 구하시오. (정답은 일반적인 비 형태로 제시)`, `h^2 : ab : c^2 꼴`);
+  if (type===21) return createProblem('2-2-2', diff, `한 원뿔 모양 탱크에 물을 채울 때, 물의 높이가 $h$일 때의 물의 부피가 $h^3$에 비례함을 닮음을 이용하여 설명하시오.`, `반지름과 높이가 h에 비례하므로 부피는 h^3에 비례`);
+  if (type===22) return createProblem('2-2-2', diff, `닮은 두 입체도형에서 닮음비가 $k$일 때, 겉넓이와 부피의 비가 각각 $k^2$, $k^3$이 되는 이유를 서술하시오.`, `길이, 넓이, 부피의 차원(1,2,3차)에 따른 비율`);
+  return createProblem('2-2-2', diff, `두 원뿔대가 서로 닮음이고 닮음비가 $1:n$일 때, 두 원뿔대의 부피 비가 $1:n^3$이 되는 이유를 설명하시오.`, `입체 닮음의 성질`);
 };
 
 // ==========================================
