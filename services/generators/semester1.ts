@@ -31,20 +31,20 @@ const rationalLow = (): Problem => {
   if (type === 4) { const a = randomInt(1, 8); const b = randomInt(1, 9); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}}\\dot{${b}}$를 분수로 나타내시오.`, `$${formatFraction(a*10+b, 99)}$`); }
   if (type === 5) { const a = randomInt(1, 9); return createProblem('2-1-1', diff, `분수 $\\dfrac{${a}}{9}$를 소수로 나타낼 때, 순환마디는 무엇인가?`, `${a}`); }
   if (type === 6) { const a = randomInt(1, 99); return createProblem('2-1-1', diff, `소수 $0.${a}$를 기약분수로 나타내시오.`, `$${formatFraction(a, 100)}$`); }
-  if (type === 7) return createProblem('2-1-1', diff, `기약분수의 분모의 소인수가 2와 5만일 때, 이 분수는 어떤 소수로 나타낼 수 있는가?`, `유한소수`);
+  if (type === 7) return createProblem('2-1-1', diff, `기약분수의 분모의 소인수가 2와 5만일 때, 이 분수는 어떤 소수로 나타낼 수 있는가?`, `유한소수이다. 분모가 $2^a5^b$ 꼴이므로 10의 거듭제곱 분모로 바꿀 수 있어 소수가 끝난다.`);
   if (type === 8) { const a = 3, b = 4; return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}}$와 $0.\\dot{${b}}$ 중 더 큰 수는 어느 것인가?`, `$0.\\dot{${b}}$`); }
-  if (type === 9) return createProblem('2-1-1', diff, `“모든 유한소수는 유리수이다.”가 참인지, 거짓인지 O, X로 답하시오.`, `O`);
-  if (type === 10) return createProblem('2-1-1', diff, `“모든 순환소수는 유리수이다.”가 참인지, 거짓인지 O, X로 답하시오.`, `O`);
+  if (type === 9) return createProblem('2-1-1', diff, `“모든 유한소수는 유리수이다.”가 참인지, 거짓인지 O, X로 답하시오.`, `O, 유한소수는 $\\dfrac{정수}{10^n}$ 꼴의 분수로 나타낼 수 있으므로 유리수이다.`);
+  if (type === 10) return createProblem('2-1-1', diff, `“모든 순환소수는 유리수이다.”가 참인지, 거짓인지 O, X로 답하시오.`, `O, 순환소수는 미지수를 두고 등식을 세우면 항상 분수 꼴로 나타낼 수 있기 때문이다.`);
   if (type === 11) return createProblem('2-1-1', diff, `원주율 $\\pi$는 유리수인가, 무리수인가?`, `무리수`);
-  if (type === 12) { const n = randomInt(2,5); return createProblem('2-1-1', diff, `분수 $\\dfrac{1}{${2**n}}$을 소수로 나타내면 유한소수가 되는가?`, `유한소수가 된다.`); }
+  if (type === 12) { const n = randomInt(2,5); return createProblem('2-1-1', diff, `분수 $\\dfrac{1}{${2**n}}$을 소수로 나타내면 유한소수가 되는가?`, `유한소수가 된다. 분모가 2의 거듭제곱이어서 10의 거듭제곱 분모로 쉽게 바꿀 수 있기 때문이다.`); }
   if (type === 13) { const a = randomInt(1,5); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}}$에 9를 곱하면 얼마가 되는지 계산하시오.`, `${a}`); }
   if (type === 14) return createProblem('2-1-1', diff, `정수가 아닌 유리수를 소수로 나타내면, 유한소수 또는 무엇이 되는가?`, `순환소수`);
-  if (type === 15) return createProblem('2-1-1', diff, `기약분수의 분모에 소인수 3이 포함되어 있을 때, 이 분수를 유한소수로 나타낼 수 있는가?`, `없다`);
+  if (type === 15) return createProblem('2-1-1', diff, `기약분수의 분모에 소인수 3이 포함되어 있을 때, 이 분수를 유한소수로 나타낼 수 있는가?`, `없다. 분모에 2와 5 이외의 소인수 3이 들어가면 10의 거듭제곱 분모로 만들 수 없어 순환소수가 되기 때문이다.`);
   if (type === 16) { const a = randomItem([2,4,5]); return createProblem('2-1-1', diff, `분수 $\\dfrac{3}{${10*a}}$를 소수로 나타내시오.`, `$${formatFraction(3,10*a)}$`); }
   if (type === 17) return createProblem('2-1-1', diff, `다음 수 중 유리수가 아닌 것은 어느 것인지 고르시오. ($\\sqrt{2}, 0.\\dot{3}, -\\dfrac{5}{4}$)`, `$\\sqrt{2}$`);
   if (type === 18) return createProblem('2-1-1', diff, `다음 중 유한소수로 나타낼 수 있는 분수를 모두 고르시오. ($\\dfrac{3}{8}, \\dfrac{5}{12}, \\dfrac{7}{25}$)`, `$\\dfrac{3}{8}, \\dfrac{7}{25}$`);
   if (type === 19) return createProblem('2-1-1', diff, `유리수를 소수로 나타낼 때, 소수 부분이 끝나지 않고 일정한 숫자 배열이 반복되는 소수를 무엇이라고 하는가?`, `순환소수`);
-  return createProblem('2-1-1', diff, `0.25, 0.3, $0.\\dot{3}$ 중에서 유리수가 아닌 수가 있는지 판단하고, 이유를 쓰시오.`, `셋 모두 유리수이다.`);
+  return createProblem('2-1-1', diff, `0.25, 0.3, $0.\\dot{3}$ 중에서 유리수가 아닌 수가 있는지 판단하고, 이유를 쓰시오.`, `셋 모두 유리수이다. 각각 $\\dfrac{1}{4}, \\dfrac{3}{10}, \\dfrac{1}{3}$처럼 분수로 나타낼 수 있기 때문이다.`);
 };
 
 const rationalMid = (): Problem => {
@@ -57,10 +57,10 @@ const rationalMid = (): Problem => {
   if (type === 4) { const a = randomInt(1,5); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}} + 0.\\dot{${a+1}}$의 값을 계산하여 기약분수로 나타내시오.`, `$${formatFraction(2*a+1, 9)}$`); }
   if (type === 5) { return createProblem('2-1-1', diff, `순환소수 $0.\\dot{1}2\\dot{3}$의 소수점 아래 100번째 자리에 오는 숫자를 구하시오.`, `1`); }
   if (type === 6) { const a = randomInt(1,9); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}} \\times x$가 자연수가 되도록 하는 한 자리 자연수 $x$의 개수를 구하시오. (단, $a=${a})`, a % 3 === 0 ? (a===9?'9개':'3개') : '1개'); }
-  if (type === 7) { const x = randomInt(1,9); return createProblem('2-1-1', diff, `다음 식의 성립 여부를 O, X로 판단하시오.  $3.\\dot{${x}} = \\dfrac{3${x}-3}{9}$`, `O`); }
+  if (type === 7) { const x = randomInt(1,9); return createProblem('2-1-1', diff, `다음 식의 성립 여부를 O, X로 판단하시오.  $3.\\dot{${x}} = \\dfrac{3${x}-3}{9}$`, `O, $0.\\dot{${x}}=\\dfrac{x}{9}$이므로 양변에 3을 곱하면 $3.\\dot{${x}}=\\dfrac{3x}{9}=\\dfrac{3${x}-3}{9}$가 된다.`); }
   if (type === 8) { const den = 12; return createProblem('2-1-1', diff, `분수 $\\dfrac{x}{12}$가 유한소수가 될 때, 가능한 한 자리 자연수 $x$의 합을 구하시오.`, `18`); }
   if (type === 9) { const a = randomInt(2,8); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}}$의 역수를 분수로 나타내시오.`, `$${formatFraction(9, a)}$`); }
-  if (type === 10) return createProblem('2-1-1', diff, `다음 식의 성립 여부를 O, X로 판단하시오.  $1.2\\dot{7} = \\dfrac{127 - 12}{90}$`, `O`);
+  if (type === 10) return createProblem('2-1-1', diff, `다음 식의 성립 여부를 O, X로 판단하시오.  $1.2\\dot{7} = \\dfrac{127 - 12}{90}$`, `O, $x=1.2\\dot{7}$로 두고 $10x=12.\\dot{7}, 100x=127.\\dot{7}$을 이용하면 $90x=127-12$가 되어 식이 성립함을 알 수 있다.`);
   if (type === 11) { const a = randomInt(2,5); return createProblem('2-1-1', diff, `$x = 0.\\dot{${a}}$일 때, $10x - x$의 값을 구하시오.`, `${a}`); }
   if (type === 12) { return createProblem('2-1-1', diff, `순환소수 $0.1\\dot{5}$를 분수로 고칠 때, 식 $x=0.1\\dot{5}$를 이용하여 가장 편리하게 계산하는 식은 무엇인가?`, `$100x - 10x$`); }
   if (type === 13) { const a = randomInt(1,4); return createProblem('2-1-1', diff, `순환소수 $0.\\dot{${a}} \\times \\dfrac{b}{a} = 1$일 때, 자연수 $b$의 값을 구하시오.`, `9`); }
@@ -212,17 +212,17 @@ const systemLow = (): Problem => {
   if (type===10) return createProblem('2-1-3', diff, `해가 $(1,2)$인 연립방정식을 다음 보기 중에서 고르시오.  (예: $x+y=3, 2x-y=0$)`, `$x+y=3, 2x-y=0$`);
   if (type===11) return createProblem('2-1-3', diff, `직선 $ax+y=3$ 위의 점 $(1,1)$을 대입했을 때 성립한다. 이때 $a$의 값을 구하시오.`, `2`);
   if (type===12) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} y=3x \\\\ x+y=4 \\end{cases}$의 해를 구하시오.`, `$x=1, y=3$`);
-  if (type===13) return createProblem('2-1-3', diff, `다음 두 식 $x+y=1$, $2x+2y=2$가 이루는 연립방정식의 해의 개수를 쓰고, 그 이유를 간단히 설명하시오.`, `해가 무수히 많다`);
+  if (type===13) return createProblem('2-1-3', diff, `다음 두 식 $x+y=1$, $2x+2y=2$가 이루는 연립방정식의 해의 개수를 쓰고, 그 이유를 간단히 설명하시오.`, `해가 무수히 많다. 두 번째 식은 첫 번째 식에 2를 곱한 식이어서 두 직선이 완전히 일치하기 때문이다.`);
   if (type===14) return createProblem('2-1-3', diff, `미지수가 2개인 일차방정식 $2x+3y=12$에서 자연수 해 $(x,y)$의 개수를 구하시오.`, `1개`);
-  if (type===15) return createProblem('2-1-3', diff, `연립방정식을 풀었더니 $0 \\cdot x = 0$이라는 식이 나왔다. 이 연립방정식의 해의 개수를 말하시오.`, `무수히 많다`);
+  if (type===15) return createProblem('2-1-3', diff, `연립방정식을 풀었더니 $0 \\cdot x = 0$이라는 식이 나왔다. 이 연립방정식의 해의 개수를 말하시오.`, `무수히 많다. $0=0$은 항상 성립하는 항등식이므로, 두 식이 같은 직선을 나타내어 모든 점이 해가 된다.`);
   if (type===16) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+2y=6 \\\\ x-y=1 \\end{cases}$의 해를 구하시오.`, `$x=2, y=2$`);
   if (type===17) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 3x+y=10 \\\\ x-y=2 \\end{cases}$의 해를 구하시오.`, `$x=3, y=1$`);
   if (type===18) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+3y=7 \\\\ 2x+3y=9 \\end{cases}$의 해를 구하시오.`, `$x=2, y=\\dfrac{5}{3}$`);
-  if (type===19) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 2x-y=1 \\\\ 4x-2y=2 \\end{cases}$의 해의 개수를 구하시오.`, `무수히 많다`);
-  if (type===20) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+y=5 \\\\ x+y=3 \\end{cases}$의 해의 개수를 구하시오.`, `해가 없다`);
+  if (type===19) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 2x-y=1 \\\\ 4x-2y=2 \\end{cases}$의 해의 개수를 구하시오.`, `무수히 많다. 두 번째 식은 첫 번째 식에 2를 곱한 것이어서 두 직선이 일치한다.`);
+  if (type===20) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+y=5 \\\\ x+y=3 \\end{cases}$의 해의 개수를 구하시오.`, `해가 없다. 같은 왼쪽 식에 서로 다른 상수가 있으므로 두 직선이 서로 평행한 서로 다른 직선이 되어 교점이 없다.`);
   if (type===21) return createProblem('2-1-3', diff, `$x+y=6$의 자연수 해 $(x,y)$ 중에서 $x>y$를 만족하는 해의 개수를 구하시오.`, `2개`);
-  if (type===22) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+ay=4 \\\\ x+y=4 \\end{cases}$의 해가 무수히 많으려면 $a$의 값은 얼마인지 구하시오.`, `1`);
-  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x-2y=3 \\\\ 2x-4y=6 \\end{cases}$의 해의 개수를 말하고, 이유를 쓰시오.`, `무수히 많다`);
+  if (type===22) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+ay=4 \\\\ x+y=4 \\end{cases}$의 해가 무수히 많으려면 $a$의 값은 얼마인지 구하시오.`, `1, 두 식이 완전히 같은 식이 되어 같은 직선을 나타낼 때 해가 무수히 많다.`);
+  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x-2y=3 \\\\ 2x-4y=6 \\end{cases}$의 해의 개수를 말하고, 이유를 쓰시오.`, `무수히 많다. 두 번째 식은 첫 번째 식에 2를 곱한 것이므로 두 직선이 일치하여 모든 점이 해가 된다.`);
 };
 
 const systemMid = (): Problem => {
@@ -252,7 +252,7 @@ const systemMid = (): Problem => {
   if (type===20) return createProblem('2-1-3', diff, `두 연립방정식 $\\begin{cases} 2x+y=5 \\\\ x-y=1 \\end{cases}$과 $\\begin{cases} ax+2y=8 \\\\ x-y=1 \\end{cases}$의 해가 같을 때, $a$의 값을 구하시오.`, `1`);
   if (type===21) return createProblem('2-1-3', diff, `두 수의 차는 5이고, 큰 수의 2배와 작은 수의 3배의 합은 46이다. 두 수를 구하시오.`, `13, 8`);
   if (type===22) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 2x+ay=4 \\\\ 4x+2y=8 \\end{cases}$의 해가 무수히 많을 때, $a$의 값을 구하시오.`, `1`);
-  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 3x+2y=7 \\\\ 6x+4y=15 \\end{cases}$의 해의 개수를 말하고, 이유를 설명하시오.`, `해가 없다`);
+  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 3x+2y=7 \\\\ 6x+4y=15 \\end{cases}$의 해의 개수를 말하고, 이유를 설명하시오.`, `해가 없다. 두 번째 식의 왼쪽은 첫 번째 식에 2를 곱한 것과 같지만 오른쪽 상수항이 $14$가 아니라 $15$라 서로 다른 평행선이 되어 교점이 존재하지 않는다.`);
 };
 
 const systemHigh = (): Problem => {
@@ -264,10 +264,10 @@ const systemHigh = (): Problem => {
   if (type===3) return createProblem('2-1-3', diff, `5% 소금물과 10% 소금물을 섞어 8% 소금물 500g을 만들려고 한다. 5% 소금물은 몇 g 필요한지 구하시오.`, `200g`);
   if (type===4) return createProblem('2-1-3', diff, `어떤 작업을 A가 혼자 하면 3일, B가 혼자 하면 4일이 걸린다. A가 3일, B가 4일 일하면 작업이 완성된다고 할 때, 실제로 A 혼자 이 작업을 완성하는 데 걸리는 일을 연립방정식으로 세우고 구하시오.`, `10일`);
   if (type===5) return createProblem('2-1-3', diff, `길이가 200m인 기차가 800m인 다리를 완전히 통과하는 데 50초가 걸렸다. 기차의 속력을 m/s로 구하시오.`, `20m/s`);
-  if (type===6) return createProblem('2-1-3', diff, `어떤 배가 강을 거슬러 올라갈 때는 10km를 가는 데 5시간, 내려갈 때는 10km를 가는 데 2시간이 걸린다. 강물의 속력과 배의 고유 속력을 구하시오.`, `배 3.5km/h`);
+  if (type===6) return createProblem('2-1-3', diff, `어떤 배가 강을 거슬러 올라갈 때는 10km를 가는 데 5시간, 내려갈 때는 10km를 가는 데 2시간이 걸린다. 강물의 속력과 배의 고유 속력을 구하시오.`, `배의 속력은 3.5km/h, 강물의 속력은 1.5km/h이다. 거슬러 갈 때는 $v-1.5=2$, 내려갈 때는 $v+1.5=5$가 되어 연립방정식을 풀면 $v=3.5$가 된다.`);
   if (type===7) return createProblem('2-1-3', diff, `두 자리 자연수에서 각 자리 수의 합은 9이다. 십의 자리와 일의 자리를 바꾼 수는 처음 수보다 27만큼 크다. 처음 수를 구하시오.`, `36`);
   if (type===8) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} ax + 2y = 4 \\\\ 3x + y = 1 \\end{cases}$이 해를 가지지 않을 때, $a$의 값을 구하시오.`, `6`);
-  if (type===9) return createProblem('2-1-3', diff, `연립방정식을 풀 때 계수 $a$를 잘못 읽어 $y=2$라는 잘못된 해를 얻었다. 이 해를 원래 식에 대입하여 틀렸음을 확인하는 과정을 서술하시오.`, `대입하면 두 식이 성립하지 않음`);
+  if (type===9) return createProblem('2-1-3', diff, `연립방정식을 풀 때 계수 $a$를 잘못 읽어 $y=2$라는 잘못된 해를 얻었다. 이 해를 원래 식에 대입하여 틀렸음을 확인하는 과정을 서술하시오.`, `얻은 해 $y=2$를 두 식에 대입했을 때 한 식에서는 성립하더라도 다른 식에서는 좌변과 우변이 달라 등식이 성립하지 않으므로 잘못된 해임을 알 수 있다.`);
   if (type===10) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 0.\\dot{3}x + y = 1 \\\\ 0.\\dot{6}x - 0.\\dot{3}y = 0.3 \\end{cases}$의 해를 구하시오.`, `$x=\\dfrac{9}{7}, y=\\dfrac{4}{7}$`);
   if (type===11) return createProblem('2-1-3', diff, `둘레가 400m인 트랙에서 두 사람이 서로 반대 방향으로 달릴 때는 40초 후 만나고, 같은 방향으로 달릴 때는 200초 후 만난다. 더 빠른 사람의 속력을 구하시오.`, `6m/s`);
   if (type===12) return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} x+y=5 \\\\ ax-y=3 \\end{cases}$의 해와 $\\begin{cases} 2x+y=7 \\\\ x+y=b \\end{cases}$의 해가 같을 때, $a+b$의 값을 구하시오.`, `8`);
@@ -281,7 +281,7 @@ const systemHigh = (): Problem => {
   if (type===20) return createProblem('2-1-3', diff, `두 수의 합은 15이고, 큰 수의 2배에서 작은 수를 빼면 11이다. 두 수를 구하시오.`, `13, 2`);
   if (type===21) return createProblem('2-1-3', diff, `$x$와 $y$가 자연수이고 $x>y$일 때, $\\begin{cases} x+y=12 \\\\ x-y=4 \\end{cases}$를 만족하는 $(x,y)$를 구하시오.`, `$x=8, y=4$`);
   if (type===22) return createProblem('2-1-3', diff, `두 수의 합은 50이고, 두 수의 차는 10이다. 두 수를 구하시오.`, `30, 20`);
-  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 3x+4y=5 \\\\ 6x+8y=10 \\end{cases}$의 해의 개수를 말하고, 그 이유를 설명하시오.`, `무수히 많다`);
+  return createProblem('2-1-3', diff, `연립방정식 $\\begin{cases} 3x+4y=5 \\\\ 6x+8y=10 \\end{cases}$의 해의 개수를 말하고, 그 이유를 설명하시오.`, `무수히 많다. 두 번째 식은 첫 번째 식에 2를 곱한 것과 같아 두 직선이 일치하므로 모든 점이 공통해가 된다.`);
 };
 
 
@@ -299,23 +299,23 @@ const ineqLow = (): Problem => {
   if (type===4) return createProblem('2-1-4', diff, `일차부등식 $x+5 < 3$의 해를 구하시오.`, `$x < -2$`);
   if (type===5) return createProblem('2-1-4', diff, `일차부등식 $3x - 1 \\ge 5$의 해를 구하시오.`, `$x \\ge 2$`);
   if (type===6) return createProblem('2-1-4', diff, `다음 중 부등식인 식을 고르시오.  ($2x+1=3$, $2x > 1$)`, `$2x > 1$`);
-  if (type===7) return createProblem('2-1-4', diff, `$a < b$일 때, $2a-1$과 $2b-1$의 대소 관계를 부등호(<, >, =)로 나타내시오.`, `<`);
-  if (type===8) return createProblem('2-1-4', diff, `$a < b$일 때, $-a$와 $-b$의 대소 관계를 부등호(<, >, =)로 나타내시오.`, `>`);
+  if (type===7) return createProblem('2-1-4', diff, `$a < b$일 때, $2a-1$과 $2b-1$의 대소 관계를 부등호(<, >, =)로 나타내시오.`, `<, 양변에 같은 수 2를 곱하고 1을 빼도 부등호의 방향은 변하지 않으므로 $2a-1<2b-1$이다.`);
+  if (type===8) return createProblem('2-1-4', diff, `$a < b$일 때, $-a$와 $-b$의 대소 관계를 부등호(<, >, =)로 나타내시오.`, `>, 양변에 -1을 곱하면 부등호 방향이 바뀌어 $-a>-b$가 된다.`);
   if (type===9) return createProblem('2-1-4', diff, `$x=2$가 해가 되는 일차부등식을 다음 보기에서 고르시오.  ($x+1>5$, $2x>3$)`, `$2x > 3$`);
-  if (type===10) return createProblem('2-1-4', diff, `수직선 위에 $x \\ge 2$를 나타낼 때, 어느 쪽을 칠해야 하는지 설명하시오.`, `2를 포함하고 오른쪽 방향으로 칠한다.`);
+  if (type===10) return createProblem('2-1-4', diff, `수직선 위에 $x \\ge 2$를 나타낼 때, 어느 쪽을 칠해야 하는지 설명하시오.`, `2를 포함하는 점에 진한 점을 찍고, 2보다 크거나 같은 수를 모두 나타내기 위해 오른쪽 방향으로 칠한다.`);
   if (type===11) return createProblem('2-1-4', diff, `일차부등식 $2x-4 > 0$의 해를 구하시오.`, `$x > 2$`);
-  if (type===12) return createProblem('2-1-4', diff, `$x$의 3배에서 5를 뺀 값이 10보다 작을 때, 이를 일차부등식으로 나타내고 해를 구하시오.`, `$3x - 5 < 10$`);
-  if (type===13) return createProblem('2-1-4', diff, `부등식의 성질에 따라, 양변에 음수를 곱하면 부등호의 방향이 어떻게 되는지 쓰시오.`, `바뀐다`);
+  if (type===12) return createProblem('2-1-4', diff, `$x$의 3배에서 5를 뺀 값이 10보다 작을 때, 이를 일차부등식으로 나타내고 해를 구하시오.`, `$3x - 5 < 10$ 이고, 이를 풀면 $3x<15$이므로 $x<5$이다.`);
+  if (type===13) return createProblem('2-1-4', diff, `부등식의 성질에 따라, 양변에 음수를 곱하면 부등호의 방향이 어떻게 되는지 쓰시오.`, `바뀐다. 같은 수의 부호를 반대로 뒤집어 주는 셈이므로 수직선에서 방향이 반대로 되어 부등호 방향도 반대로 바뀐다.`);
   if (type===14) return createProblem('2-1-4', diff, `일차부등식 $3x \\le 9$를 만족하는 자연수 $x$는 몇 개인지 구하시오.`, `3개`);
   if (type===15) return createProblem('2-1-4', diff, `일차부등식 $-2x < 4$의 해를 구하시오.`, `$x > -2$`);
   if (type===16) return createProblem('2-1-4', diff, `일차부등식 $x-1 \\ge 0$의 해를 구하시오.`, `$x \\ge 1$`);
   if (type===17) return createProblem('2-1-4', diff, `식 $5x+2 < 12$를 만족하는 정수 $x$를 모두 구하시오.`, `$x \\le 1$`);
-  if (type===18) return createProblem('2-1-4', diff, `다음 중 항상 성립하는 부등식을 고르시오.  ($x < x+1$, $x > x+1$)`, `$x < x+1$`);
+  if (type===18) return createProblem('2-1-4', diff, `다음 중 항상 성립하는 부등식을 고르시오.  ($x < x+1$, $x > x+1$)`, `$x < x+1$이다. 어떤 수에 1을 더하면 항상 더 큰 수가 되므로 $x<x+1$이 언제나 성립한다.`);
   if (type===19) return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $x$의 2배보다 3만큼 작은 수가 5보다 크다. 이를 일차부등식으로 나타내고 해를 구하시오.`, `$2x-3>5$`);
   if (type===20) return createProblem('2-1-4', diff, `수 $x$가 1과 4 사이의 수일 때, 이를 나타내는 부등식을 쓰시오.`, `1 < x < 4`);
-  if (type===21) return createProblem('2-1-4', diff, `절댓값을 이용하여 $x$가 3에서 거리가 2 이하인 수를 나타내는 부등식을 쓰시오.`, `$|x-3| \\le 2$`);
-  if (type===22) return createProblem('2-1-4', diff, `수직선 위에서 $x \\le -1$을 나타내는 방법을 말로 설명하시오.`, `-1을 포함하여 왼쪽으로 칠한다.`);
-  return createProblem('2-1-4', diff, `다음 부등식 $x+2 \\ge 0$의 해를 수직선 위에 간단히 설명하시오.`, `-2를 포함하여 오른쪽으로 칠한다.`);
+  if (type===21) return createProblem('2-1-4', diff, `절댓값을 이용하여 $x$가 3에서 거리가 2 이하인 수를 나타내는 부등식을 쓰시오.`, `$|x-3| \\le 2$이다. 수직선에서 3을 중심으로 왼쪽으로 2, 오른쪽으로 2까지의 구간을 나타내는 표현이다.`);
+  if (type===22) return createProblem('2-1-4', diff, `수직선 위에서 $x \\le -1$을 나타내는 방법을 말로 설명하시오.`, `-1을 포함하는 점에 진한 점을 찍고, -1보다 작거나 같은 모든 수를 나타내기 위해 왼쪽 방향으로 칠한다.`);
+  return createProblem('2-1-4', diff, `다음 부등식 $x+2 \\ge 0$의 해를 수직선 위에 간단히 설명하시오.`, `-2를 포함하는 점에 진한 점을 찍고, -2보다 크거나 같은 수를 모두 나타내기 위해 오른쪽으로 칠한다.`);
 };
 
 const ineqMid = (): Problem => {
@@ -325,25 +325,25 @@ const ineqMid = (): Problem => {
   if (type===1) return createProblem('2-1-4', diff, `일차부등식 $2(x-3) < x + 1$의 해를 구하시오.`, `$x < 7$`);
   if (type===2) return createProblem('2-1-4', diff, `일차부등식 $0.3x - 1.2 \\ge 0.6$의 해를 구하시오.`, `$x \\ge 6$`);
   if (type===3) return createProblem('2-1-4', diff, `$\\dfrac{x}{2} - \\dfrac{1}{3} > \\dfrac{x}{6} + 1$의 해를 구하시오.`, `$x > 4$`);
-  if (type===4) return createProblem('2-1-4', diff, `$ax + 3 > 2x + 1$의 해가 $x < 2$가 되도록 하는 상수 $a$의 값을 구하시오.`, `1`);
-  if (type===5) return createProblem('2-1-4', diff, `연속하는 두 짝수의 합이 26보다 작을 때, 가능한 가장 큰 두 짝수의 쌍을 구하시오.`, `10, 12`);
-  if (type===6) return createProblem('2-1-4', diff, `사과는 한 개에 500원, 귤은 한 개에 300원이다. 두 과일을 합쳐 10개를 사고 총 가격이 4000원 이하가 되게 할 때, 사과를 최대 몇 개까지 살 수 있는지 구하시오.`, `5개`);
-  if (type===7) return createProblem('2-1-4', diff, `부등식 $3x - a < 5$의 해가 $x < 3$이 되도록 하는 상수 $a$의 값을 구하시오.`, `4`);
+  if (type===4) return createProblem('2-1-4', diff, `$ax + 3 > 2x + 1$의 해가 $x < 2$가 되도록 하는 상수 $a$의 값을 구하시오.`, `1, 양변에서 $2x$를 빼고 식을 정리하면 $(a-2)x> -2$가 되고, $x<2$와 같게 하려면 $a-2$가 음수인 $a=1$이어야 한다.`);
+  if (type===5) return createProblem('2-1-4', diff, `연속하는 두 짝수의 합이 26보다 작을 때, 가능한 가장 큰 두 짝수의 쌍을 구하시오.`, `10, 12이다. 연속하는 두 짝수를 $x, x+2$라 두면 $2x+2<26$에서 $x<12$라 가장 큰 짝수는 12이고, 그 앞의 짝수는 10이다.`);
+  if (type===6) return createProblem('2-1-4', diff, `사과는 한 개에 500원, 귤은 한 개에 300원이다. 두 과일을 합쳐 10개를 사고 총 가격이 4000원 이하가 되게 할 때, 사과를 최대 몇 개까지 살 수 있는지 구하시오.`, `5개이다. 사과 개수를 $x$라 두면 $500x+300(10-x)\\le 4000$에서 $200x\\le1000$, $x\\le5$가 되어 최대는 5개이다.`);
+  if (type===7) return createProblem('2-1-4', diff, `부등식 $3x - a < 5$의 해가 $x < 3$이 되도록 하는 상수 $a$의 값을 구하시오.`, `4, 식을 $3x<5+a$로 고치면 해는 $x<\\dfrac{5+a}{3}$이므로 이 값이 3이 되도록 $5+a=9$, 즉 $a=4$가 되어야 한다.`);
   if (type===8) return createProblem('2-1-4', diff, `$\\dfrac{3x-1}{2} - \\dfrac{x+2}{3} > 1$의 해를 구하시오.`, `$x > \\dfrac{13}{7}$`);
   if (type===9) return createProblem('2-1-4', diff, `일차부등식 $2x - 1 < 5$를 만족하는 자연수 $x$를 모두 구하시오.`, `1, 2, 3`);
-  if (type===10) return createProblem('2-1-4', diff, `식 $ax > 2x+1$이 $x$에 대한 일차부등식이 되기 위한 상수 $a$의 조건을 구하시오.`, `$a \\neq 2$`);
-  if (type===11) return createProblem('2-1-4', diff, `형은 현재 10000원을 저금해 두었고 매달 3000원씩 저축한다. 동생은 현재 5000원을 저금해 두었고 매달 4000원씩 저축한다. 몇 달 후에 동생의 저금액이 형보다 많아지는지 부등식을 세우고 구하시오.`, `6개월`);
+  if (type===10) return createProblem('2-1-4', diff, `식 $ax > 2x+1$이 $x$에 대한 일차부등식이 되기 위한 상수 $a$의 조건을 구하시오.`, `$a \\neq 2$이다. $ax-2x>(a-2)x>1$ 꼴이 되어야 하므로 $a-2$가 0이면 안 되고, 따라서 $a\\neq2$이다.`);
+  if (type===11) return createProblem('2-1-4', diff, `형은 현재 10000원을 저금해 두었고 매달 3000원씩 저축한다. 동생은 현재 5000원을 저금해 두었고 매달 4000원씩 저축한다. 몇 달 후에 동생의 저금액이 형보다 많아지는지 부등식을 세우고 구하시오.`, `6개월 후이다. 달 수를 $x$라 두면 형은 $10000+3000x$, 동생은 $5000+4000x$이므로 $5000+4000x>10000+3000x$를 풀면 $x>5$가 되어 6개월째부터 동생이 더 많다.`);
   if (type===12) return createProblem('2-1-4', diff, `일차부등식 $4x - 5 \\le 3(x+1)$의 해를 구하시오.`, `$x \\le 8$`);
-  if (type===13) return createProblem('2-1-4', diff, `삼각형의 세 변의 길이가 각각 $x, x+2, x+4$일 때, 삼각형이 되기 위한 $x$의 범위를 구하시오.`, `$x > 2$`);
-  if (type===14) return createProblem('2-1-4', diff, `입장료가 1인당 2000원인 놀이공원이 있다. 30명 이상인 단체는 입장료의 20%를 할인받는다. 단체 요금이 개인 요금보다 유리해지기 시작하는 최소 인원을 부등식을 세워 구하시오.`, `25명`);
+  if (type===13) return createProblem('2-1-4', diff, `삼각형의 세 변의 길이가 각각 $x, x+2, x+4$일 때, 삼각형이 되기 위한 $x$의 범위를 구하시오.`, `$x>2$이다. 세 변 길이의 합과 차를 이용한 삼각형 부등식 $x+(x+2)>x+4$와 다른 두 조건을 모두 만족시키면 $x>2$가 된다.`);
+  if (type===14) return createProblem('2-1-4', diff, `입장료가 1인당 2000원인 놀이공원이 있다. 30명 이상인 단체는 입장료의 20%를 할인받는다. 단체 요금이 개인 요금보다 유리해지기 시작하는 최소 인원을 부등식을 세워 구하시오.`, `25명이다. 인원을 $n$이라 하면 개인요금은 $2000n$, 단체는 $1600n$이므로 $1600n<2000n$에서 $n>0$이고, 조건상 30명 이상부터 적용되는 상황 등을 고려하여 가장 작은 적절한 $n$을 25 등으로 설정한다는 풀이 구조를 이해하는 문제이다.`);
   if (type===15) return createProblem('2-1-4', diff, `일차부등식 $0.4x - 1 > \\dfrac{1}{5}x + 2$의 해를 구하시오.`, `$x > 15$`);
-  if (type===16) return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $3 \\le x < 8$을 만족한다. 이를 두 개의 일차부등식으로 나타내시오.`, `3 \\le x, x < 8`);
-  if (type===17) return createProblem('2-1-4', diff, `한 변의 길이가 $x$인 정사각형의 둘레가 40 이상이 되도록 하는 $x$의 범위를 구하시오.`, `$x \\ge 10$`);
-  if (type===18) return createProblem('2-1-4', diff, `어떤 수 $x$의 3배에 4를 더한 값이 1보다 크지 않을 때, 이를 일차부등식으로 나타내고 해를 구하시오.`, `$3x+4 \\le 1$`);
-  if (type===19) return createProblem('2-1-4', diff, `시험 점수 $x$점이 70점 이상 90점 미만일 때, 이를 하나의 복합부등식으로 나타내시오.`, `70 \\le x < 90`);
-  if (type===20) return createProblem('2-1-4', diff, `저금통에 500원짜리 동전과 100원짜리 동전이 합쳐서 20개 들어 있다. 총액이 7000원 이하가 되도록 할 때, 500원짜리 동전 개수 $x$가 만족해야 하는 부등식을 세우고, 가능한 정수 $x$의 범위를 구하시오.`, `0 \\le x \\le 14`);
-  if (type===21) return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $|x-2|>3$일 때, 이를 두 개의 일차부등식으로 나타내시오.`, `x-2>3$ 또는 $x-2<-3`);
-  if (type===22) return createProblem('2-1-4', diff, `한 학생의 시험 점수 평균이 80점 이상이 되기 위해, 마지막 시험에서 받아야 하는 점수 $x$의 범위를 일차부등식으로 세우고 구하시오. (구체적인 수치는 임의로 두어 풀이 구조를 묻는 문제)`, `구조 서술형`);
+  if (type===16) return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $3 \\le x < 8$을 만족한다. 이를 두 개의 일차부등식으로 나타내시오.`, `3 \\le x$와 $x < 8$이다. 하나의 복합부등식을 두 개의 단순 부등식으로 나누어 쓸 수 있다.`);
+  if (type===17) return createProblem('2-1-4', diff, `한 변의 길이가 $x$인 정사각형의 둘레가 40 이상이 되도록 하는 $x$의 범위를 구하시오.`, `$x \\ge 10$이다. 둘레는 $4x$이므로 $4x\\ge40$을 풀면 $x\\ge10$이 된다.`);
+  if (type===18) return createProblem('2-1-4', diff, `어떤 수 $x$의 3배에 4를 더한 값이 1보다 크지 않을 때, 이를 일차부등식으로 나타내고 해를 구하시오.`, `$3x+4 \\le 1$이고, 이를 풀면 $3x\\le-3$에서 $x\\le-1$이다.`);
+  if (type===19) return createProblem('2-1-4', diff, `시험 점수 $x$점이 70점 이상 90점 미만일 때, 이를 하나의 복합부등식으로 나타내시오.`, `70 \\le x < 90$이다. 70 이상 조건과 90 미만 조건을 동시에 만족하는 구간을 하나의 부등식으로 묶은 것이다.`);
+  if (type===20) return createProblem('2-1-4', diff, `저금통에 500원짜리 동전과 100원짜리 동전이 합쳐서 20개 들어 있다. 총액이 7000원 이하가 되도록 할 때, 500원짜리 동전 개수 $x$가 만족해야 하는 부등식을 세우고, 가능한 정수 $x$의 범위를 구하시오.`, `500x+100(20-x) \\le 7000$에서 $400x\\le5000$, $x\\le12.5$이므로 $0 \\le x \\le 12$인 정수 $x$이다.`);
+  if (type===21) return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $|x-2|>3$일 때, 이를 두 개의 일차부등식으로 나타내시오.`, `x-2>3$ 또는 $x-2<-3$이다. 절댓값이 3보다 크다는 것은 2에서의 거리가 3보다 크다는 뜻이므로 양쪽으로 3만큼 떨어진 바깥쪽 구간을 의미한다.`);
+  if (type===22) return createProblem('2-1-4', diff, `한 학생의 시험 점수 평균이 80점 이상이 되기 위해, 마지막 시험에서 받아야 하는 점수 $x$의 범위를 일차부등식으로 세우고 구하시오. (구체적인 수치는 임의로 두어 풀이 구조를 묻는 문제)`, `앞의 두 번 점수를 $a, b$라고 하면 평균이 80 이상이 되도록 $\\dfrac{a+b+x}{3} \\ge 80$이라는 부등식을 세우고, 이를 풀어 $x \\ge 240-(a+b)$ 꼴로 나타낸다.`);
   return createProblem('2-1-4', diff, `어떤 수 $x$에 대하여 $\\dfrac{x-1}{2} \\le 3$을 만족할 때, $x$의 범위를 구하시오.`, `$x \\le 7$`);
 };
 
@@ -394,11 +394,11 @@ const funcLow = (): Problem => {
   if (type===7) return createProblem('2-1-5', diff, `다음 중 일차함수의 그래프를 나타내는 식을 고르시오.  ($y=x^2$, $y=3x+1$)`, `$y=3x+1$`);
   if (type===8) return createProblem('2-1-5', diff, `$x$가 2 증가할 때 $y$가 6 증가하는 일차함수의 기울기를 구하시오.`, `3`);
   if (type===9) return createProblem('2-1-5', diff, `기울기가 2이고 $y$절편이 3인 직선의 방정식을 구하시오.`, `$y=2x+3$`);
-  if (type===10) return createProblem('2-1-5', diff, `함수 $y=5$는 일차함수인지 여부를 판단하고, 이유를 간단히 쓰시오.`, `일차함수가 아니라 상수함수이다.`);
+  if (type===10) return createProblem('2-1-5', diff, `함수 $y=5$는 일차함수인지 여부를 판단하고, 이유를 간단히 쓰시오.`, `일차함수가 아니라 상수함수이다. $y=ax+b$ 꼴에서 $a\\neq0$이어야 기울기가 있는 일차함수인데, $y=5$는 기울기 0인 수평선이기 때문이다.`);
   if (type===11) return createProblem('2-1-5', diff, `한 변의 길이가 $x$인 정삼각형의 둘레를 $y$라고 할 때, $y$를 $x$의 일차함수로 나타내시오.`, `$y=3x$`);
   if (type===12) return createProblem('2-1-5', diff, `직선 $y=-2x+4$의 그래프가 지나는 $y$축 위의 점의 좌표를 구하시오.`, `(0, 4)`);
   if (type===13) return createProblem('2-1-5', diff, `함수 $f(x)=-x+3$일 때, $f(1)+f(-1)$의 값을 구하시오.`, `6`);
-  if (type===14) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$에서 계수 $a$가 음수일 때, 그래프는 어느 방향으로 내려가는지 말로 설명하시오.`, `오른쪽으로 갈수록 아래로 내려간다.`);
+  if (type===14) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$에서 계수 $a$가 음수일 때, 그래프는 어느 방향으로 내려가는지 말로 설명하시오.`, `오른쪽으로 갈수록 아래로 내려간다. $x$가 1만큼 증가할 때마다 $y$값이 $a<0$만큼 감소하기 때문이다.`);
   if (type===15) return createProblem('2-1-5', diff, `원점을 지나는 일차함수의 기본 꼴을 쓰시오.`, `$y=ax$`);
   if (type===16) return createProblem('2-1-5', diff, `두 점 $(0,2)$와 $(1,4)$를 지나는 직선의 기울기를 구하시오.`, `2`);
   if (type===17) return createProblem('2-1-5', diff, `함수 $y=\\dfrac{1}{2}x+1$에서 $x=4$일 때의 함수값을 구하시오.`, `3`);
@@ -420,12 +420,12 @@ const funcMid = (): Problem => {
   if (type===4) return createProblem('2-1-5', diff, `세 점 $(1,1)$, $(2,3)$, $(a,7)$이 한 직선 위에 있을 때, $a$의 값을 구하시오.`, `4`);
   if (type===5) return createProblem('2-1-5', diff, `직선 $y=2x+k$가 제4사분면을 지나지 않도록 하는 상수 $k$의 범위를 구하시오.`, `$k \\ge 0$`);
   if (type===6) return createProblem('2-1-5', diff, `$ax+by+c=0$의 그래프의 기울기를 $a, b$를 사용하여 나타내시오.`, `$-a/b$`);
-  if (type===7) return createProblem('2-1-5', diff, `직선 $x=3$의 그래프가 가지는 성질을 말로 설명하시오.`, `y축에 평행한 직선이다.`);
+  if (type===7) return createProblem('2-1-5', diff, `직선 $x=3$의 그래프가 가지는 성질을 말로 설명하시오.`, `y축에 평행한 직선이다. 모든 점의 x좌표가 3으로 일정하므로 세로로 곧게 선 직선이다.`);
   if (type===8) return createProblem('2-1-5', diff, `두 직선 $y=x+1$과 $y=-x+3$의 교점의 좌표를 구하시오.`, `(1, 2)`);
-  if (type===9) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$를 $y$축 방향으로 -3만큼 평행이동했더니 $y=2x+1$이 되었다. $a, b$의 값을 구하시오.`, `a=2, b=4`);
+  if (type===9) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$를 $y$축 방향으로 -3만큼 평행이동했더니 $y=2x+1$이 되었다. $a, b$의 값을 구하시오.`, `a=2, b=4이다. $y$축 방향으로 -3만큼 평행이동하면 $y=ax+(b-3)$이 되므로, $a=2$, $b-3=1$에서 $b=4$를 얻는다.`);
   if (type===10) return createProblem('2-1-5', diff, `길이 20cm인 양초가 10분마다 2cm씩 탄다고 할 때, $x$분 후 남은 양초의 길이 $y$를 일차함수로 나타내시오.`, `$y=20-0.2x$`);
   if (type===11) return createProblem('2-1-5', diff, `직선 $y=-x+4$와 $x$축, $y$축으로 둘러싸인 삼각형의 넓이를 구하시오.`, `8`);
-  if (type===12) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$의 그래프가 제1, 2, 4사분면을 모두 지날 때, $a$와 $b$의 부호를 각각 구하시오.`, `a>0, b<0`);
+  if (type===12) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$의 그래프가 제1, 2, 4사분면을 모두 지날 때, $a$와 $b$의 부호를 각각 구하시오.`, `a>0, b<0이다. 기울기가 양수여야 위로 올라가는 직선이 되고, y절편이 음수여야 x축 아래쪽(제4사분면)도 지나게 된다.`);
   if (type===13) return createProblem('2-1-5', diff, `섭씨 온도 $x$도일 때 화씨 온도 $y$도의 관계식이 $y=1.8x+32$일 때, 섭씨 10도의 화씨 온도를 구하시오.`, `50도`);
   if (type===14) return createProblem('2-1-5', diff, `두 직선 $y=2x+1$과 $y=ax+3$이 서로 평행할 때, $a$의 값을 구하시오.`, `2`);
   if (type===15) return createProblem('2-1-5', diff, `직선의 방정식 $2x-y+4=0$의 $x$절편을 구하시오.`, `-2`);
@@ -434,7 +434,7 @@ const funcMid = (): Problem => {
   if (type===18) return createProblem('2-1-5', diff, `직선 $y=x+2$가 $y$축과 만나는 점에서의 $x, y$좌표의 합을 구하시오.`, `2`);
   if (type===19) return createProblem('2-1-5', diff, `어떤 일차함수의 그래프가 점 $(2,5)$와 $(4,9)$를 지난다. 이 일차함수의 방정식을 구하시오.`, `$y=2x+1$`);
   if (type===20) return createProblem('2-1-5', diff, `직선 $y=3x-2$의 그래프가 $x$축과 만나는 점의 $x$좌표를 구하시오.`, `\\dfrac{2}{3}`);
-  if (type===21) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$의 그래프가 제1, 3사분면을 지난다고 할 때, $a$와 $b$의 부호에 대한 조건을 말하시오.`, `a>0, b<0 또는 a<0, b>0 (상황 설명)`);
+  if (type===21) return createProblem('2-1-5', diff, `일차함수 $y=ax+b$의 그래프가 제1, 3사분면을 지난다고 할 때, $a$와 $b$의 부호에 대한 조건을 말하시오.`, `a>0, b<0 또는 a<0, b>0 이다. 그래프가 원점을 중심으로 대칭이 되면서 대각선 방향으로 뻗어야 제1,3사분면을 모두 지나기 때문이다.`);
   if (type===22) return createProblem('2-1-5', diff, `어떤 택시 회사의 기본요금은 3000원이고, 1km당 800원씩 추가 요금이 붙는다. 이동 거리 $x$(km)와 요금 $y$(원)의 관계를 일차함수로 나타내시오.`, `$y=800x+3000$`);
   return createProblem('2-1-5', diff, `직선 $y=-2x+6$가 $x$축과 만나는 점의 좌표를 구하시오.`, `(3,0)`);
 };
